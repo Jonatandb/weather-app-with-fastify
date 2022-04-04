@@ -1,0 +1,6 @@
+// To use this file, REST Client must be installed in VSCode: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+@PORT = {{$dotenv PORT}}
+@API = http://localhost:{{PORT}}
+
+GET {{API}}/v1
