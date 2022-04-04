@@ -30,3 +30,13 @@
 > - npm install
 > - npm start
 > - Navegar a http://localhost:3001/v1
+
+### Tests/Coverage:
+
+> - npm test
+> - npm test:coverage (_luego abrir el archivo: backend\coverage\lcov-report\index.html_)
+
+### Pendientes/Bugs:
+
+- Coverage no detecta que código está testeado y cual no.
+- Eliminar rutas creadas para hacer test de pruebas y verificar funcionamiento de Jest (eliminar también el archivo de test de esas rutas y los requests dentro del archivo requests.http).
