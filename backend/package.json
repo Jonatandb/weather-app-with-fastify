@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Fastify backend API for weather app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fastify",
+    "api",
+    "backend",
+    "node"
+  ],
+  "author": "jonatandb@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "fastify": "^3.27.4"
+  }
+}
