@@ -19,3 +19,8 @@
 
 - [NodeJs v.16](https://nodejs.org/es/)
 - API KEY de [Open Weather Map](https://openweathermap.org/) (_Requiere crear cuenta gratuita_)
+
+### Miscelaneos:
+
+- Utilizar el archivo _.env.example_ como modelo para crear un archivo llamado _.env_ que tenga el siguiente contenido:
+  - PORT=3001 (_Especifica el puerto en que se desea que se ejecute la API_)
