@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fastify backend API for weather app",
   "main": "server.js",
   "scripts": {
@@ -8,22 +8,27 @@
     "dev": "nodemon server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:coverage": "jest --coverage --collectCoverageFrom='./**/*.js'"
   },
   "keywords": [
     "fastify",
     "api",
     "backend",
-    "node"
+    "node",
+    "jonatandb"
   ],
   "author": "jonatandb@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.12.0",
-    "nodemon": "^2.0.15"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   },
   "dependencies": {
     "dotenv": "^16.0.0",
-    "fastify": "^3.27.4"
+    "fastify": "^3.27.4",
+    "node-fetch": "^2.6.7"
   }
 }

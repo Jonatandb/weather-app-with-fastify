@@ -3,4 +3,8 @@
 @PORT = {{$dotenv PORT}}
 @API = http://localhost:{{PORT}}
 
+### Demo route for initial tests with Jest
 GET {{API}}/v1
+
+### Demo route for initial tests with Jest
+GET {{API}}/fetch
