@@ -1,10 +1,12 @@
 {
   "name": "backend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Fastify backend API for weather app",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,6 +18,7 @@
   "author": "jonatandb@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.12.0",
     "nodemon": "^2.0.15"
   }
 }
