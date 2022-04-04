@@ -24,3 +24,9 @@
 
 - Utilizar el archivo _.env.example_ como modelo para crear un archivo llamado _.env_ que tenga el siguiente contenido:
   - PORT=3001 (_Especifica el puerto en que se desea que se ejecute la API_)
+
+### Ejecución:
+
+> - npm install
+> - npm start
+> - Navegar a http://localhost:3001/v1
