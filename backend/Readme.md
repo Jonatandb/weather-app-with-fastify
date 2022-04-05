@@ -13,10 +13,12 @@
 - Endpoints:
 
   - **/location** (_Devuelve nombre de la ciudad actual según la IP del usuario._)
-  - **/current/city** (_Devuelve clima según "city", o de la ciudad actual si no se especificó una._)
-  - **/forecast/city** (_Devuelve pronóstico a 5 días según "city", o de la ciudad actual si no se especificó una._)
+  - **/current/_city_** (_Devuelve clima según "city", o de la ciudad actual si no se especificó una._)
+  - **/forecast/_city_** (_Devuelve pronóstico a 5 días según "city", o de la ciudad actual si no se especificó una._)
 
     - **Nota**: _El parámetro "city" es opcional. Si no está presente se usa la cuidad correspondiente a la IP del usuario._
+
+  - **/openapi** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
 
 ---
 
@@ -57,13 +59,16 @@
 
 ### Pendientes/Bugs:
 
-- Agregar Swagger (openapi)
+- 🤔
 
 ---
 
 ### Sitios investigados:
 
--
+- https://github.com/OAI/OpenAPI-Specification/issues/93 - Optional path parameters 💔
+- https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/
+- https://editor.swagger.io/
+- https://swagger.io/docs/specification/2-0/describing-parameters/
 - https://github.com/fastify/fastify/pull/2607#discussion_r501120298 - The optional chain operator /:opt?
 - https://ajv.js.org/json-schema.html
 - https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/#validation
