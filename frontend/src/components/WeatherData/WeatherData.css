@@ -1,0 +1,10 @@
+.weatherData-Container {
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+
+.dataRow {
+  font-size: small;
+  margin: 0;
+  padding: 0;
+}
