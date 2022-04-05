@@ -1,4 +1,8 @@
-const location = { type: 'string' }
+const location = {
+  type: 'string',
+  example: 'Buenos Aires',
+  description: 'City name',
+}
 
 const locationSchema = {
   tags: ['WeatherApp-Fastify API'],

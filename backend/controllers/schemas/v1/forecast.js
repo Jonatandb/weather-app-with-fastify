@@ -156,7 +156,9 @@ const forecastSchema = {
   tags: ['WeatherApp-Fastify API'],
   summary: 'Get forecast by city',
   params: {
-    city: { type: 'string' },
+    city: {
+      type: 'string',
+    },
   },
   response: {
     200: forecast,

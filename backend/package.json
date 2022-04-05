@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Fastify backend API for weather app",
   "main": "server.js",
   "scripts": {
@@ -16,7 +16,9 @@
     "api",
     "backend",
     "node",
-    "jonatandb"
+    "jonatandb",
+    "swaager",
+    "openapi"
   ],
   "author": "jonatandb@gmail.com",
   "license": "ISC",
@@ -29,6 +31,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "fastify": "^3.27.4",
+    "fastify-swagger": "^5.1.0",
     "node-fetch": "2.6.7",
     "public-ip": "4.0.4"
   }
