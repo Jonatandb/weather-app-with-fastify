@@ -35,6 +35,8 @@
 
 ### Tests/Coverage
 
+> - Ejecutar: _npm test_
+
 ---
 
 ### Pendientes/Bugs
@@ -46,6 +48,9 @@
 
 ### Sitios investigados
 
+- https://openweathermap.org/api/one-call-api
+- https://openweathermap.org/faq#:~:text=OpenWeather%20uses%20Unix%20time%20and,forecast%20and%20historical%20weather%20data.
+- https://stackoverflow.com/questions/62376115/how-to-obtain-open-weather-api-date-time-from-city-being-fetched
 - https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
 - https://www.youtube.com/watch?v=KYjjtRgg_H0&ab_channel=midudev TESTING en REACT 🧪 ¡Aprende DESDE CERO! Con react-testing-library y Jest (FullStack Bootcamp JS)
 - https://emojiterra.com/es/sol/ Emojis

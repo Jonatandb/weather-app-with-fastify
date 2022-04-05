@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "description": "React frontend for WeatherApp-Fastify",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "jonatandb@gmail.com",
   "proxy": "http://localhost:3001",
