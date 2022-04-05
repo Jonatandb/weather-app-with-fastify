@@ -12,7 +12,12 @@ GET {{API}}/location
 ### GET /current/:city  -> Get weather by city
 GET {{API}}/current/bariloche
 
-
 ### GET /current  -> Get weather of the city getted from client IP since no city is provided
 GET {{API}}/current
 
+
+### GET /forecast/:city  -> Get forecast by city
+GET {{API}}/forecast/bariloche
+
+### GET /forecast  -> Get forecast of the city getted from client IP since no city is provided
+GET {{API}}/forecast

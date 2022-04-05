@@ -36,7 +36,7 @@ const getWeatherDataByCity = async city => {
     const apiURL = getWeatherForecastAPIURLByCity(WeatherDataType.Weather, city)
     const response = await nodeFetch(apiURL)
     const weatherData = await response.json()
-    if (!weatherData || !weatherData.weather)
+    if (!weatherData || weatherData?.cod !== 200 || !weatherData.weather)
       throw new Error(`No weather data found related to city: ${city}`)
     return weatherData
   } catch (error) {
@@ -50,9 +50,34 @@ const getWeatherData = async request => {
   return weatherData
 }
 
+const getForecastDataByCity = async city => {
+  try {
+    const apiURL = getWeatherForecastAPIURLByCity(WeatherDataType.Forecast, city)
+    const response = await nodeFetch(apiURL)
+    const forecastData = await response.json()
+    if (!forecastData || forecastData?.cod !== '200' || !forecastData.list)
+      throw new Error(`No forecast data found related to city: ${city}`)
+    return forecastData
+  } catch (error) {
+    console.log(error)
+    return {}
+  }
+}
+
+const getForecastData = async request => {
+  const city = request.params?.city || (await getCityByRequest(request))
+  const forecastData = await getForecastDataByCity(city)
+  return forecastData
+}
+
 module.exports = {
   getCityByRequest,
   getClientPublicIPByRequest,
   getLocationDataByIP,
   getWeatherData,
+  getForecastData,
+  WeatherDataType,
+  getWeatherForecastAPIURLByCity,
+  getWeatherDataByCity,
+  getForecastDataByCity,
 }
