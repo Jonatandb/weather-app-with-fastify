@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Fastify backend API for weather app",
   "main": "server.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "dev": "nodemon server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "jest",
-    "test:coverage": "jest --coverage --collectCoverageFrom='./**/*.js'"
+    "test": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "fastify",
@@ -29,6 +29,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "fastify": "^3.27.4",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "2.6.7",
+    "public-ip": "4.0.4"
   }
 }
