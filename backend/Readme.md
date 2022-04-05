@@ -57,10 +57,7 @@
 
 ### Pendientes/Bugs:
 
-- Crear ruta: _/v1/forecast/city_
 - Agregar Swagger (openapi)
-- ~~Coverage no detecta que código está testeado y cual no.~~
-- ~~Eliminar rutas creadas para hacer test de pruebas y verificar funcionamiento de Jest (eliminar también el archivo de test de esas rutas y los requests dentro del archivo requests.http).~~
 
 ---
 

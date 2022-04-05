@@ -5,7 +5,7 @@ afterAll(() => {
 })
 
 describe('GET /v1/current', () => {
-  it('should return weather infomation (JSON object) of "Madrid" and status code 200', async () => {
+  it('should return weather information (JSON object) of "Madrid" and status code 200', async () => {
     try {
       await fastify.ready()
       const response = await supertest(fastify.server)
