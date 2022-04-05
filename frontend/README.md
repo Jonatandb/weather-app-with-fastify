@@ -41,7 +41,9 @@
 
 ### Pendientes/Bugs
 
-- UI
+- Mejorar UI en general para aprovechar mejor el espacio disponible.
+- Crear componente que muestra el pronóstico para los próximos cinco días.
+- Crear compoenentes que mostrarán las ciudades disponibles para seleccionar y obtener el pronóstico.
 - Reemplazar logos _.png_ y _favicon.ico_ por nuevos y originales.
 
 ---
