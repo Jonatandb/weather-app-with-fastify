@@ -1,8 +1,7 @@
-# Aplicación de consulta de clima: WeatherApp-Fastify
+# Aplicación con información del clima: WeatherApp-Fastify
 
-- Permite visualizar el clima de la ciudad actual,
-  - pronóstico de próximos 5 días para la ciudad actual
-  - y de otras 5 ciudades seleccionables.
+- Muestra el clima de la ciudad actual, junto con el pronóstico de los próximos 5 días.
+- Permite seleccionar otras 5 ciudades para obtener también tal información.
 
 ---
 
