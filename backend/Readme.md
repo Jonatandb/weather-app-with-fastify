@@ -65,7 +65,6 @@
 
 ### Sitios investigados:
 
-- https://github.com/fastify/fastify-cors
 - https://github.com/OAI/OpenAPI-Specification/issues/93 - Optional path parameters 💔
 - https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/
 - https://editor.swagger.io/
