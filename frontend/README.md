@@ -46,6 +46,10 @@
 
 ### Sitios investigados
 
+- https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
+- https://www.youtube.com/watch?v=KYjjtRgg_H0&ab_channel=midudev TESTING en REACT 🧪 ¡Aprende DESDE CERO! Con react-testing-library y Jest (FullStack Bootcamp JS)
+- https://emojiterra.com/es/sol/ Emojis
+- https://www.w3schools.com/charsets/ref_emoji.asp
 - https://openweathermap.org/weather-conditions
 - https://github.com/fastify/fastify-cors
 - https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
