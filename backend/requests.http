@@ -1,9 +1,18 @@
 // To use this file, REST Client must be installed in VSCode: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 @PORT = {{$dotenv PORT}}
-@API = http://localhost:{{PORT}}
+@API_VERSION = v1
+@API = http://localhost:{{PORT}}/{{API_VERSION}}
 
 
-### GET /v1/location  -> Get city from client IP address
-GET {{API}}/v1/location
+### GET /location  -> Get city from client IP address
+GET {{API}}/location
+
+
+### GET /current/:city  -> Get weather by city
+GET {{API}}/current/bariloche
+
+
+### GET /current  -> Get weather of the city getted from client IP since no city is provided
+GET {{API}}/current
 
