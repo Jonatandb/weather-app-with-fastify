@@ -9,6 +9,7 @@ const swagger_config = require('./swagger_config')
 const build = function (opts = {}) {
   const app = fastify(opts)
 
+  app.register(require('fastify-cors'))
   app.register(require('fastify-swagger'), swagger_config)
   app.register(locationRoute, { prefix: '/v1' })
   app.register(currentRoute, { prefix: '/v1' })
