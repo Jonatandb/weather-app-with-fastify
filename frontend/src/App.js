@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import CityName from './components/CityName/CityName'
+import Footer from './components/Footer/Footer'
 import ForecastData from './components/ForecastData/ForecastData'
 import WeatherData from './components/WeatherData/WeatherData'
 
@@ -68,24 +69,19 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        <h1>
-          ☀️
-          <br />
-          WeatherApp - Fastify
-        </h1>
+      <div className='App-header'>
+        <header>
+          <h1>
+            ☀️
+            <br />
+            WeatherApp - Fastify
+          </h1>
+        </header>
         <CityName isLoading={loadingCityName} cityName={city} />
         <WeatherData weatherData={weatherData} isLoading={loadingWeatherData} />
         <ForecastData forecastData={forecastData} isLoading={loadingForecastData} />
-        <a
-          className='App-link Link-footer'
-          href='https://github.com/Jonatandb'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Jonatandb
-        </a>
-      </header>
+        <Footer selectCity={setCity} />
+      </div>
     </div>
   )
 }
