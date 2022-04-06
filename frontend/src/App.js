@@ -74,7 +74,7 @@ function App() {
           <br />
           WeatherApp - Fastify
         </h1>
-        <CityName cityName={loadingCityName ? 'Cargando ciudad... ⏳' : city} />
+        <CityName isLoading={loadingCityName} cityName={city} />
         <WeatherData weatherData={weatherData} isLoading={loadingWeatherData} />
         <ForecastData forecastData={forecastData} isLoading={loadingForecastData} />
         <a
