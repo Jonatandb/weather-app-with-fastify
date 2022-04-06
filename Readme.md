@@ -7,6 +7,6 @@
 
 <center>
 
-![desktop](/frontend/Screenshot_desktop.png)
+![desktop](/frontend/Screenshot_Desktop.png)
 
 </center>
