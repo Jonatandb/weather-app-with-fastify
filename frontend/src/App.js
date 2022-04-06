@@ -1,65 +1,70 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import CityName from './components/CityName/CityName'
+import ForecastData from './components/ForecastData/ForecastData'
 import WeatherData from './components/WeatherData/WeatherData'
 
+const WeatherType = {
+  Weather: 'current',
+  Forecast: 'forecast',
+}
+
+const errorGettingCityMessage = 'Error al obtener la ciudad 💀'
+
 function App() {
-  const [city, setCity] = useState('🏙')
+  const [city, setCity] = useState('')
   const [loadingCityName, setLoadingCityName] = useState(true)
-  const [loadingCurrentWeatherData, setLoadingCurrentWeatherData] = useState(false)
-  const [currentWeatherData, setCurrentWeatherData] = useState({})
+  const [loadingWeatherData, setLoadingWeatherData] = useState(false)
+  const [loadingForecastData, setLoadingForecastData] = useState(false)
+  const [weatherData, setWeatherData] = useState(null)
+  const [forecastData, setForecastData] = useState(null)
 
   const getCityName = () => {
     return fetch('/v1/location')
-      .then(res => {
-        if (res.ok) return res.text()
-        setLoadingCityName(false)
-        return null
-      })
-      .then(res => {
-        setLoadingCityName(false)
-        if (res) return res
-        return null
-      })
-      .catch(err => {
-        setLoadingCityName(false)
-        return null
-      })
+      .then(res => res.text())
+      .then(text => text)
+      .catch(err => null)
   }
 
-  const getCurrentWeatherDataByCity = cityName => {
-    const apiURL = `/v1/current/${cityName}`
-    setLoadingCurrentWeatherData(true)
+  const getWeatherForecastDataByCity = (weatherType, cityName) => {
+    const apiURL = `/v1/${weatherType}/${cityName}`
     return fetch(apiURL)
-      .then(res => {
-        if (res.ok) return res.json()
-        setLoadingCurrentWeatherData(false)
-        return null
-      })
-      .then(res => {
-        setLoadingCurrentWeatherData(false)
-        if (res) return res
-        return null
-      })
-      .catch(err => {
-        setLoadingCurrentWeatherData(false)
-        return null
-      })
+      .then(res => res.json())
+      .then(json => json)
+      .catch(err => null)
   }
 
   useEffect(() => {
-    getCityName().then(cityName => {
-      setCity(cityName || 'Error al obtener la ciudad 💀')
-    })
+    async function getInitialData() {
+      const cityNameResult = await getCityName()
+        .then(cityName => cityName)
+        .catch(err => null)
+      setLoadingCityName(false)
+      setCity(cityNameResult || errorGettingCityMessage)
+    }
+    getInitialData()
   }, [])
 
   useEffect(() => {
-    if (city && city !== '🏙') {
-      getCurrentWeatherDataByCity(city).then(weatherData => {
-        setCurrentWeatherData(weatherData)
-      })
+    if (city && city !== errorGettingCityMessage && !loadingCityName) {
+      async function getWeatherDataByCity() {
+        setLoadingWeatherData(true)
+        const weatherDataResult = await getWeatherForecastDataByCity(WeatherType.Weather, city)
+        setLoadingWeatherData(false)
+        setWeatherData(weatherDataResult || null)
+      }
+      getWeatherDataByCity()
+
+      async function getForecastDataByCity() {
+        setLoadingForecastData(true)
+        const forecastDataResult = await getWeatherForecastDataByCity(WeatherType.Forecast, city)
+        setLoadingForecastData(false)
+        setForecastData(forecastDataResult || null)
+      }
+
+      getForecastDataByCity()
     }
-  }, [city])
+  }, [city, loadingCityName])
 
   return (
     <div className='App'>
@@ -70,7 +75,8 @@ function App() {
           WeatherApp - Fastify
         </h1>
         <CityName cityName={loadingCityName ? 'Cargando ciudad... ⏳' : city} />
-        <WeatherData weatherData={currentWeatherData} isLoading={loadingCurrentWeatherData} />
+        <WeatherData weatherData={weatherData} isLoading={loadingWeatherData} />
+        <ForecastData forecastData={forecastData} isLoading={loadingForecastData} />
         <a
           className='App-link Link-footer'
           href='https://github.com/Jonatandb'

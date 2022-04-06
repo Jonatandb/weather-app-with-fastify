@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastData should render correctly 1`] = `
+<div>
+  <div
+    class="ForecastData-Container"
+  >
+    <div
+      class="ForecastData-Cell"
+    >
+      <div
+        class="ForecastData-Cell-Date"
+      >
+        31/3/2020
+      </div>
+      <img
+        alt="31/3/2020 min: 10° / max: 20"
+        class="ForecastData-Cell-Icon"
+        src="https://openweathermap.org/img/wn/01d.png"
+      />
+      <div
+        class="ForecastData-Cell-Temp"
+      >
+        10
+        ° / 
+        20
+        °
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ForecastData should render correctly when forecastData is null 1`] = `<div />`;
+
+exports[`ForecastData should render correctly when forecastData is null and isLoading is true 1`] = `
+<div>
+  <div>
+    ⏳ Cargando pronóstico... 
+  </div>
+</div>
+`;
+
+exports[`ForecastData should render correctly when isLoading is true 1`] = `
+<div>
+  <div>
+    ⏳ Cargando pronóstico... 
+  </div>
+</div>
+`;
