@@ -1,10 +1,37 @@
-.weatherData-Container {
+.WeatherData-Container {
   padding: 10px;
   margin: 0 0 10px 0;
+  max-width: max-content;
 }
 
-.dataRow {
+.WeatherData-Title {
+  margin: 5px;
+}
+
+.WeatherData-Details-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.WeatherData-Image-Container {}
+
+.WeatherData-Rows-Container {
+  text-align: center;
+  margin-left: 40px;
+}
+
+.WeatherData-Row {
   font-size: small;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.WeatherData-Row>p {
+  margin: 0;
 }
