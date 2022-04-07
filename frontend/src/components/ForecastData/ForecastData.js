@@ -4,7 +4,7 @@ import './ForecastData.css'
 export default function ForecastData({ forecastData, isLoading }) {
   if (isLoading)
     return (
-      <div>
+      <div className='ForecastData-LoadingMessage'>
         <SpinningIcon speed='fast'>⏳</SpinningIcon> Cargando pronóstico...{' '}
       </div>
     )

@@ -96,7 +96,9 @@ exports[`WeatherData should render correctly with empty data 1`] = `<div />`;
 
 exports[`WeatherData should render correctly with loading 1`] = `
 <div>
-  <div>
+  <div
+    class="WeatherData-LoadingMessage"
+  >
     <div
       class="SpinningIcon-fast"
       speed="fast"
