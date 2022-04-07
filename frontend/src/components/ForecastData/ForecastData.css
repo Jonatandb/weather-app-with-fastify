@@ -35,3 +35,7 @@
   justify-content: center;
   min-width: min-content;
 }
+
+.ForecastData-LoadingMessage {
+  margin: 20px;
+}

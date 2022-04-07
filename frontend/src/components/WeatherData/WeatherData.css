@@ -15,8 +15,6 @@
   align-items: center;
 }
 
-.WeatherData-Image-Container {}
-
 .WeatherData-Rows-Container {
   text-align: center;
   margin-left: 40px;
@@ -34,4 +32,8 @@
 
 .WeatherData-Row>p {
   margin: 0;
+}
+
+.WeatherData-LoadingMessage {
+  margin: 20px;
 }
