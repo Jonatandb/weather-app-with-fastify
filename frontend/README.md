@@ -39,10 +39,9 @@
 
 ---
 
-### Pendientes/Bugs
+### Pendientes/Bugs:
 
-- Crear compoenentes que mostrarán las ciudades disponibles para seleccionar y obtener el pronóstico.
-- Reemplazar logos _.png_ y _favicon.ico_ por nuevos y originales.
+- [https://github.com/Jonatandb/weather-app-with-fastify/issues](https://github.com/Jonatandb/weather-app-with-fastify/issues)
 
 ---
 

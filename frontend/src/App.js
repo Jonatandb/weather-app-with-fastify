@@ -3,6 +3,7 @@ import './App.css'
 import CityName from './components/CityName/CityName'
 import Footer from './components/Footer/Footer'
 import ForecastData from './components/ForecastData/ForecastData'
+import Header from './components/Header/Header'
 import WeatherData from './components/WeatherData/WeatherData'
 
 const WeatherType = {
@@ -69,14 +70,8 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='App-header'>
-        <header>
-          <h1>
-            ☀️
-            <br />
-            WeatherApp - Fastify
-          </h1>
-        </header>
+      <div className='App-container'>
+        <Header />
         <CityName isLoading={loadingCityName} cityName={city} />
         <WeatherData weatherData={weatherData} isLoading={loadingWeatherData} />
         <ForecastData forecastData={forecastData} isLoading={loadingForecastData} />
