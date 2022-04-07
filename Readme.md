@@ -7,6 +7,6 @@
 
 <center>
 
-![desktop](/frontend/Screenshot_Desktop.png)
+![desktop](/frontend/WeatherApp_Screenshot.gif)
 
 </center>

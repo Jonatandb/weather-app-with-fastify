@@ -6,6 +6,14 @@
 
 ---
 
+<center>
+
+![desktop](/frontend/WeatherApp_Screenshot.gif)
+
+</center>
+
+---
+
 ### Requerimientos
 
 - [NodeJs v.16](https://nodejs.org/es/)
