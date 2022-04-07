@@ -6,6 +6,14 @@
 
 ---
 
+<center>
+
+![desktop](OpenApi_Screenshot.png)
+
+</center>
+
+---
+
 ### Esta API provee en formato JSON el estado del tiempo basado en diferentes endpoints:
 
 - Ruta base:
@@ -18,7 +26,7 @@
 
     - **Nota**: _El parámetro "city" es opcional. Si no está presente se usa la cuidad correspondiente a la IP del usuario._
 
-  - **/openapi** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
+  - **[/openapi](http://localhost:3001/v1/openapi)** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
 
 ---
 
@@ -59,7 +67,7 @@
 
 ### Pendientes/Bugs:
 
-- 🤔
+- [https://github.com/Jonatandb/weather-app-with-fastify/issues](https://github.com/Jonatandb/weather-app-with-fastify/issues)
 
 ---
 
