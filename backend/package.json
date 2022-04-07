@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Fastify backend API for weather app",
   "main": "server.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "supertest": "^6.2.2"
   },
   "dependencies": {
+    "@supercharge/request-ip": "^1.2.0",
     "dotenv": "^16.0.0",
     "fastify": "^3.27.4",
     "fastify-cors": "^6.0.3",

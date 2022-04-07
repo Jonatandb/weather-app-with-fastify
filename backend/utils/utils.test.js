@@ -14,4 +14,13 @@ describe('isIPLocalhost( ip )', () => {
     expect(isIPLocalhost('::5')).toBeFalsy()
     expect(isIPLocalhost('82.144.1.45')).toBeFalsy()
   })
+  it('should return false for null', async () => {
+    expect(isIPLocalhost(null)).toBeFalsy()
+  })
+  it('should return false for undefined', async () => {
+    expect(isIPLocalhost(undefined)).toBeFalsy()
+  })
+  it('should return false for empty string', async () => {
+    expect(isIPLocalhost('')).toBeFalsy()
+  })
 })
