@@ -39,11 +39,13 @@ export default function ForecastData({ forecastData, isLoading }) {
           return (
             <div className='ForecastData-Cell' key={date}>
               <div className='ForecastData-Cell-Date'>{date}</div>
-              <img
-                className='ForecastData-Cell-Icon'
-                src={icon}
-                alt={`${date} min: ${temp_min}° / max: ${temp_max}`}
-              ></img>
+              <div className='ForecastData-Cell-IconContainer'>
+                <img
+                  className='ForecastData-Cell-Icon'
+                  src={icon}
+                  alt={`${date} min: ${temp_min}° / max: ${temp_max}`}
+                />
+              </div>
               <div className='ForecastData-Cell-Temp'>
                 {temp_min}° / {temp_max}°
               </div>
