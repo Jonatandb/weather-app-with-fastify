@@ -1,7 +1,13 @@
 import React from 'react'
+import SpinningIcon from '../SpinningIcon/SpinningIcon'
 import './WeatherData.css'
 export default function WeatherData({ isLoading, weatherData }) {
-  if (isLoading) return <div>⏳ Cargando datos del clima... </div>
+  if (isLoading)
+    return (
+      <div>
+        <SpinningIcon speed='fast'>⏳</SpinningIcon> Cargando datos del clima...{' '}
+      </div>
+    )
   if (!weatherData || !Object.keys(weatherData).length) return null
 
   const { main, wind, weather } = weatherData
