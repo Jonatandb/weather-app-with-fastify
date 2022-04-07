@@ -1,7 +1,13 @@
 import React from 'react'
+import SpinningIcon from '../SpinningIcon/SpinningIcon'
 import './WeatherData.css'
 export default function WeatherData({ isLoading, weatherData }) {
-  if (isLoading) return <div>⏳ Cargando datos del clima... </div>
+  if (isLoading)
+    return (
+      <div className='WeatherData-LoadingMessage'>
+        <SpinningIcon speed='fast'>⏳</SpinningIcon> Cargando datos del clima...
+      </div>
+    )
   if (!weatherData || !Object.keys(weatherData).length) return null
 
   const { main, wind, weather } = weatherData
@@ -24,23 +30,23 @@ export default function WeatherData({ isLoading, weatherData }) {
             <p>{`${temp}ºC`}</p>
           </div>
           <div className='WeatherData-Row'>
-            <p>Humedad: </p>
+            <p>Humedad:</p>
             <p>{`${humidity}%`}</p>
           </div>
           <div className='WeatherData-Row'>
-            <p>Presión: </p>
+            <p>Presión:</p>
             <p>{`${pressure}hPa`}</p>
           </div>
           <div className='WeatherData-Row'>
-            <p>Viento: </p>
+            <p>Viento:</p>
             <p>{`${speed}m/s`}</p>
           </div>
           <div className='WeatherData-Row'>
-            <p>Estado: </p>
+            <p>Estado:</p>
             <p>{`${weatherMain}`}</p>
           </div>
           <div className='WeatherData-Row'>
-            <p>Cielo: </p>
+            <p>Cielo:</p>
             <p>{`${description}`}</p>
           </div>
         </div>

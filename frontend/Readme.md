@@ -6,6 +6,14 @@
 
 ---
 
+<center>
+
+![desktop](/frontend/WeatherApp_Screenshot.gif)
+
+</center>
+
+---
+
 ### Requerimientos
 
 - [NodeJs v.16](https://nodejs.org/es/)
@@ -39,15 +47,16 @@
 
 ---
 
-### Pendientes/Bugs
+### Pendientes/Bugs:
 
-- Crear compoenentes que mostrarán las ciudades disponibles para seleccionar y obtener el pronóstico.
-- Reemplazar logos _.png_ y _favicon.ico_ por nuevos y originales.
+- [https://github.com/Jonatandb/weather-app-with-fastify/issues](https://github.com/Jonatandb/weather-app-with-fastify/issues)
 
 ---
 
 ### Sitios investigados
 
+- https://realfavicongenerator.net/
+- https://www.ionos.com/tools/favicon-generator
 - https://openweathermap.org/api/one-call-api
 - https://openweathermap.org/faq#:~:text=OpenWeather%20uses%20Unix%20time%20and,forecast%20and%20historical%20weather%20data.
 - https://stackoverflow.com/questions/62376115/how-to-obtain-open-weather-api-date-time-from-city-being-fetched

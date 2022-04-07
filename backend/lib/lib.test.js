@@ -15,7 +15,7 @@ const exampledotcomIP = '192.0.43.10' // Domain: 'example.com' -> Location -> ci
 
 describe('getCityByRequest( request ) => city name', () => {
   it('should return city "Anthony" since the request has an IP in that location', async () => {
-    const request = { ip: exampledotcomIP }
+    const request = { headers: { 'x-forwarded-for': exampledotcomIP } }
     const city = await getCityByRequest(request)
     expect(city).toBe('Anthony')
   })
@@ -25,7 +25,7 @@ describe('getClientPublicIPByRequest( req ) => returns the public client IP', ()
   it('should return the public client IP whenever the request has an IP known as localhost', async () => {
     const allLocalhostIPWhereReplacedByAPublicIP = knownLocalhostIPList.every(async localhostIP => {
       const fakeRequestIP = localhostIP
-      const request = { ip: fakeRequestIP }
+      const request = { headers: { 'x-forwarded-for': fakeRequestIP } }
       const ClientPublicIP = await getClientPublicIPByRequest(request)
       const result = isIPLocalhost(ClientPublicIP)
       return result
@@ -34,7 +34,7 @@ describe('getClientPublicIPByRequest( req ) => returns the public client IP', ()
   })
   it(`should return the same IP when the request has an IP which is not known as localhost.`, async () => {
     const fakeRequestIP = exampledotcomIP
-    const request = { ip: fakeRequestIP }
+    const request = { headers: { 'x-forwarded-for': fakeRequestIP } }
     const ClientPublicIP = await getClientPublicIPByRequest(request)
     expect(ClientPublicIP).toBe(fakeRequestIP)
   })
@@ -86,7 +86,7 @@ describe('getWeatherData( request )', () => {
   it('should return the weather data of the city that belongs to the client IP when the param city was not provided', async () => {
     const request = {
       params: {},
-      ip: exampledotcomIP,
+      headers: { 'x-forwarded-for': exampledotcomIP },
     }
     const weatherData = await getWeatherData(request)
     expect(weatherData).not.toBeNull()
@@ -131,7 +131,7 @@ describe('getForecastData( request )', () => {
   it('should return the forecast data of the city that belongs to the client IP when the param city was not provided', async () => {
     const request = {
       params: {},
-      ip: exampledotcomIP,
+      headers: { 'x-forwarded-for': exampledotcomIP },
     }
     const forecastData = await getForecastData(request)
     expect(forecastData).not.toBeNull()

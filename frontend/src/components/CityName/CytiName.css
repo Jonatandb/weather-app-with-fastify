@@ -1,3 +1,7 @@
 .CityName-Title {
   margin: 5px;
 }
+
+.CityName-LoadingMessage {
+  margin: 130px 10px;
+}

@@ -6,6 +6,14 @@
 
 ---
 
+<center>
+
+![desktop](OpenApi_Screenshot.png)
+
+</center>
+
+---
+
 ### Esta API provee en formato JSON el estado del tiempo basado en diferentes endpoints:
 
 - Ruta base:
@@ -18,7 +26,7 @@
 
     - **Nota**: _El parámetro "city" es opcional. Si no está presente se usa la cuidad correspondiente a la IP del usuario._
 
-  - **/openapi** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
+  - **[/openapi](http://localhost:3001/v1/openapi)** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
 
 ---
 
@@ -42,14 +50,14 @@
 
 > - npm install
 > - npm start
-> - Navegar a http://localhost:3001/v1/location (_**3001** es el puerto sugerido, se debe configurar en el archivo .env -> **PORT**_)
+> - Navegar a http://localhost:3001/v1/openapi si se desea ver e interactuar con la lista de endpoints (_**3001** es el puerto sugerido, se debe configurar en el archivo .env -> **PORT**_)
 
 ---
 
 ### Tests/Coverage:
 
-> - _npm test_
-> - _npm run test:coverage_ (_Luego abrir el archivo: **backend\coverage\lcov-report\index.html**_)
+> - npm test
+> - npm run test:coverage (_Luego abrir el archivo: **backend\coverage\lcov-report\index.html**_)
 > - ~~**NOTA** Debido a que tuve problemas para ejecutar los tests, ya que estoy usando módulos de ES con [_Dynamic imports_](https://javascript.info/modules-dynamic-imports) en un proyecto CommonJS, tuve que crear dos nuevos scripts para correr los tests, los cuales utilizan características experimentales de Node JS. (_[Fuente](https://stackoverflow.com/a/61653104/10752198)_). Los nuevos scripts son los siguientes:~~
 >   - ~~_npm run test:experimental_~~
 >   - ~~_npm run test:coverage:experimental_~~
@@ -59,12 +67,30 @@
 
 ### Pendientes/Bugs:
 
-- 🤔
+- [https://github.com/Jonatandb/weather-app-with-fastify/issues](https://github.com/Jonatandb/weather-app-with-fastify/issues)
 
 ---
 
 ### Sitios investigados:
 
+- https://stackoverflow.com/questions/45053974/requiring-an-async-function-in-nodejs
+- https://stackoverflow.com/questions/50974313/node-js-async-module-require
+- https://github.com/fastify/fastify/issues/267 Weird behavior with fastify.register, async/await
+- https://stackoverflow.com/questions/27906551/node-js-logging-use-morgan-and-winston
+- https://www.fastify.io/docs/latest/Reference/Plugins/
+- https://www.fastify.io/docs/latest/Guides/Getting-Started/#your-first-plugin
+- https://futurestud.io/tutorials/retrieve-a-requests-ip-address-in-node-js
+- https://openweathermap.org/api/one-call-api
+- https://openweathermap.org/faq#:~:text=OpenWeather%20uses%20Unix%20time%20and,forecast%20and%20historical%20weather%20data
+- https://stackoverflow.com/questions/62376115/how-to-obtain-open-weather-api-date-time-from-city-being-fetched
+- https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
+- https://www.youtube.com/watch?v=KYjjtRgg_H0&ab_channel=midudev TESTING en REACT 🧪 ¡Aprende DESDE CERO! Con react-testing-library y Jest (FullStack Bootcamp JS)
+- https://code.visualstudio.com/docs/languages/jsconfig What is jsconfig.json?
+- https://github.com/microsoft/TypeScript/issues/46700#issuecomment-968084329 Auto import doesn't work unless it already imported from another file #46700
+- https://github.com/microsoft/vscode/issues/132299 Auto Import not working (Typescript ) after latest update
+- https://openweathermap.org/weather-conditions
+- https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/
+- https://github.com/fastify/fastify-cors
 - https://github.com/OAI/OpenAPI-Specification/issues/93 - Optional path parameters 💔
 - https://www.fastify.io/docs/latest/Reference/Validation-and-Serialization/
 - https://editor.swagger.io/

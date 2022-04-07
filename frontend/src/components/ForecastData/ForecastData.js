@@ -1,7 +1,13 @@
+import SpinningIcon from '../SpinningIcon/SpinningIcon'
 import './ForecastData.css'
 
 export default function ForecastData({ forecastData, isLoading }) {
-  if (isLoading) return <div>⏳ Cargando pronóstico... </div>
+  if (isLoading)
+    return (
+      <div className='ForecastData-LoadingMessage'>
+        <SpinningIcon speed='fast'>⏳</SpinningIcon> Cargando pronóstico...{' '}
+      </div>
+    )
   if (!forecastData || !Object.keys(forecastData).length) return null
 
   const processedData = forecastData.list.reduce((acc, curr) => {

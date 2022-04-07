@@ -40,7 +40,7 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Humedad: 
+            Humedad:
           </p>
           <p>
             10%
@@ -50,7 +50,7 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Presión: 
+            Presión:
           </p>
           <p>
             10hPa
@@ -60,7 +60,7 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Viento: 
+            Viento:
           </p>
           <p>
             10m/s
@@ -70,7 +70,7 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Estado: 
+            Estado:
           </p>
           <p>
             main
@@ -80,7 +80,7 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Cielo: 
+            Cielo:
           </p>
           <p>
             description
@@ -96,8 +96,16 @@ exports[`WeatherData should render correctly with empty data 1`] = `<div />`;
 
 exports[`WeatherData should render correctly with loading 1`] = `
 <div>
-  <div>
-    ⏳ Cargando datos del clima... 
+  <div
+    class="WeatherData-LoadingMessage"
+  >
+    <div
+      class="SpinningIcon-fast"
+      speed="fast"
+    >
+      ⏳
+    </div>
+     Cargando datos del clima...
   </div>
 </div>
 `;
