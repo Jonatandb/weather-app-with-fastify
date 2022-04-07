@@ -1,5 +1,6 @@
 const nodeFetch = require('node-fetch')
 const publicIP = require('public-ip')
+const requestIP = require('@supercharge/request-ip')
 const { isIPLocalhost } = require('../utils/utils')
 
 const WeatherDataType = {
@@ -14,9 +15,9 @@ const getCityByRequest = async request => {
 }
 
 const getClientPublicIPByRequest = async req => {
-  const v4IP = await publicIP.v4()
-  const clientIP = isIPLocalhost(req.ip) ? v4IP : req.ip
-  return clientIP
+  const clientIP = requestIP.getClientIp(req)
+  const isLocalhost = isIPLocalhost(clientIP)
+  return isLocalhost ? await publicIP.v4() : clientIP
 }
 
 const getLocationDataByIP = async ip => {
@@ -63,7 +64,6 @@ const getForecastDataByCity = async city => {
     return {}
   }
 }
-
 const getForecastData = async request => {
   const city = request.params?.city || (await getCityByRequest(request))
   const forecastData = await getForecastDataByCity(city)
