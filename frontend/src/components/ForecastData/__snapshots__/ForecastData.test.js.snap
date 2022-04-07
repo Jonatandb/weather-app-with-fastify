@@ -36,7 +36,14 @@ exports[`ForecastData should render correctly when forecastData is null 1`] = `<
 exports[`ForecastData should render correctly when forecastData is null and isLoading is true 1`] = `
 <div>
   <div>
-    ⏳ Cargando pronóstico... 
+    <div
+      class="SpinningIcon-fast"
+      speed="fast"
+    >
+      ⏳
+    </div>
+     Cargando pronóstico...
+     
   </div>
 </div>
 `;
@@ -44,7 +51,14 @@ exports[`ForecastData should render correctly when forecastData is null and isLo
 exports[`ForecastData should render correctly when isLoading is true 1`] = `
 <div>
   <div>
-    ⏳ Cargando pronóstico... 
+    <div
+      class="SpinningIcon-fast"
+      speed="fast"
+    >
+      ⏳
+    </div>
+     Cargando pronóstico...
+     
   </div>
 </div>
 `;
