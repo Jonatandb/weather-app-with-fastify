@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1649435674941" clover="3.2.0">
-  <project timestamp="1649435674941" name="All files">
+<coverage generated="1649436008997" clover="3.2.0">
+  <project timestamp="1649436008997" name="All files">
     <metrics statements="109" coveredstatements="81" conditionals="58" coveredconditionals="48" methods="31" coveredmethods="27" elements="198" coveredelements="156" complexity="0" loc="109" ncloc="109" packages="10" files="11" classes="11"/>
     <package name="src">
       <metrics statements="43" coveredstatements="17" conditionals="16" coveredconditionals="7" methods="8" coveredmethods="6"/>
@@ -66,7 +66,7 @@
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="ErrorMessage.js" path="E:\Mis Documentos\Escritorio\ProyectosEntrevistas\2022\Telecom\weather-app-with-fastify\frontend\src\components\ErrorMessage\ErrorMessage.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Footer">
@@ -167,10 +167,10 @@
         <line num="17" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="18" count="7" type="stmt"/>
         <line num="19" count="7" type="stmt"/>
-        <line num="20" count="35" type="stmt"/>
-        <line num="21" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="37" type="stmt"/>
+        <line num="21" count="37" type="cond" truecount="2" falsecount="0"/>
         <line num="22" count="31" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
         <line num="27" count="7" type="stmt"/>
       </file>
     </package>
