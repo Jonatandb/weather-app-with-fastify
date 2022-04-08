@@ -1,56 +1,35 @@
-import React from 'react'
+import { parseWeatherData } from '../../lib/lib'
 import SpinningIcon from '../SpinningIcon/SpinningIcon'
 import './WeatherData.css'
+
 export default function WeatherData({ isLoading, weatherData }) {
-  if (isLoading)
-    return (
-      <div className='WeatherData-LoadingMessage'>
-        <SpinningIcon speed='fast'>⏳</SpinningIcon> Cargando datos del clima...
-      </div>
-    )
-  if (!weatherData || !Object.keys(weatherData).length) return null
-
-  const { main, wind, weather } = weatherData
-  const { temp, humidity, pressure } = main
-  const { speed } = wind
-  const { main: weatherMain, description } = weather[0]
-
-  const iconURL = `https://openweathermap.org/img/wn/${weather[0].icon.replace('n', 'd')}@2x.png`
-
+  const processedWeatherData = parseWeatherData(weatherData)
   return (
     <div className='WeatherData-Container'>
-      <h4 className='WeatherData-Title'>Datos del clima 🌡️</h4>
-      <div className='WeatherData-Details-Container'>
-        <div className='WeatherData-Image-Container'>
-          <img src={iconURL} alt={`${weather[0].description} ${weatherData.main.temp} `}></img>
+      {isLoading ? (
+        <div className='WeatherData-LoadingMessage'>
+          <SpinningIcon speed='fast'>⏳</SpinningIcon> <p>Cargando datos del clima...</p>
         </div>
-        <div className='WeatherData-Rows-Container'>
-          <div className='WeatherData-Row'>
-            <p>Temperatura:</p>
-            <p>{`${temp}ºC`}</p>
+      ) : processedWeatherData ? (
+        <>
+          <h4 className='WeatherData-Title'>Datos del clima 🌡️</h4>
+          <div className='WeatherData-Details-Container'>
+            <div className='WeatherData-Image-Container'>
+              <img src={processedWeatherData.icon.url} alt={processedWeatherData.icon.alt} />
+            </div>
+            <div className='WeatherData-Rows-Container'>
+              {processedWeatherData.items.map(({ description, value, suffix }) => (
+                <div className='WeatherData-Row' key={description}>
+                  <p>{description}:</p>
+                  <p>{`${value}${suffix}`}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className='WeatherData-Row'>
-            <p>Humedad:</p>
-            <p>{`${humidity}%`}</p>
-          </div>
-          <div className='WeatherData-Row'>
-            <p>Presión:</p>
-            <p>{`${pressure}hPa`}</p>
-          </div>
-          <div className='WeatherData-Row'>
-            <p>Viento:</p>
-            <p>{`${speed}m/s`}</p>
-          </div>
-          <div className='WeatherData-Row'>
-            <p>Estado:</p>
-            <p>{`${weatherMain}`}</p>
-          </div>
-          <div className='WeatherData-Row'>
-            <p>Cielo:</p>
-            <p>{`${description}`}</p>
-          </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <div>{/*/Datos inválidos...*/}</div>
+      )}
     </div>
   )
 }

@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeatherData should render correctly 1`] = `<div />`;
+exports[`WeatherData should render correctly 1`] = `
+<div>
+  <div
+    class="WeatherData-Container"
+  >
+    <div />
+  </div>
+</div>
+`;
 
 exports[`WeatherData should render correctly with data 1`] = `
 <div>
@@ -19,7 +27,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         class="WeatherData-Image-Container"
       >
         <img
-          alt="description 10 "
+          alt="main description 10"
           src="https://openweathermap.org/img/wn/icod@2x.png"
         />
       </div>
@@ -31,6 +39,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         >
           <p>
             Temperatura:
+            :
           </p>
           <p>
             10ºC
@@ -41,6 +50,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         >
           <p>
             Humedad:
+            :
           </p>
           <p>
             10%
@@ -51,6 +61,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         >
           <p>
             Presión:
+            :
           </p>
           <p>
             10hPa
@@ -61,6 +72,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         >
           <p>
             Viento:
+            :
           </p>
           <p>
             10m/s
@@ -71,6 +83,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         >
           <p>
             Estado:
+            :
           </p>
           <p>
             main
@@ -81,6 +94,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         >
           <p>
             Cielo:
+            :
           </p>
           <p>
             description
@@ -92,20 +106,35 @@ exports[`WeatherData should render correctly with data 1`] = `
 </div>
 `;
 
-exports[`WeatherData should render correctly with empty data 1`] = `<div />`;
+exports[`WeatherData should render correctly with empty data 1`] = `
+<div>
+  <div
+    class="WeatherData-Container"
+  >
+    <div />
+  </div>
+</div>
+`;
 
 exports[`WeatherData should render correctly with loading 1`] = `
 <div>
   <div
-    class="WeatherData-LoadingMessage"
+    class="WeatherData-Container"
   >
     <div
-      class="SpinningIcon-fast"
-      speed="fast"
+      class="WeatherData-LoadingMessage"
     >
-      ⏳
+      <div
+        class="SpinningIcon-fast"
+        speed="fast"
+      >
+        ⏳
+      </div>
+       
+      <p>
+        Cargando datos del clima...
+      </p>
     </div>
-     Cargando datos del clima...
   </div>
 </div>
 `;
