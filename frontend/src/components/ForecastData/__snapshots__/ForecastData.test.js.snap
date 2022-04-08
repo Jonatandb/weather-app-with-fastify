@@ -70,3 +70,142 @@ exports[`ForecastData should render correctly when isLoading is true 1`] = `
   </div>
 </div>
 `;
+
+exports[`ForecastData should render no more than 5 days 1`] = `
+<div>
+  <div
+    class="ForecastData-Container"
+  >
+    <div
+      class="ForecastData-Cell"
+    >
+      <div
+        class="ForecastData-Cell-Date"
+      >
+        31/3/2020
+      </div>
+      <div
+        class="ForecastData-Cell-IconContainer"
+      >
+        <img
+          alt="31/3/2020 min: 10° / max: 20"
+          class="ForecastData-Cell-Icon"
+          src="https://openweathermap.org/img/wn/01d.png"
+        />
+      </div>
+      <div
+        class="ForecastData-Cell-Temp"
+      >
+        10
+        ° / 
+        20
+        °
+      </div>
+    </div>
+    <div
+      class="ForecastData-Cell"
+    >
+      <div
+        class="ForecastData-Cell-Date"
+      >
+        1/4/2020
+      </div>
+      <div
+        class="ForecastData-Cell-IconContainer"
+      >
+        <img
+          alt="1/4/2020 min: 10° / max: 20"
+          class="ForecastData-Cell-Icon"
+          src="https://openweathermap.org/img/wn/01d.png"
+        />
+      </div>
+      <div
+        class="ForecastData-Cell-Temp"
+      >
+        10
+        ° / 
+        20
+        °
+      </div>
+    </div>
+    <div
+      class="ForecastData-Cell"
+    >
+      <div
+        class="ForecastData-Cell-Date"
+      >
+        2/4/2020
+      </div>
+      <div
+        class="ForecastData-Cell-IconContainer"
+      >
+        <img
+          alt="2/4/2020 min: 10° / max: 20"
+          class="ForecastData-Cell-Icon"
+          src="https://openweathermap.org/img/wn/01d.png"
+        />
+      </div>
+      <div
+        class="ForecastData-Cell-Temp"
+      >
+        10
+        ° / 
+        20
+        °
+      </div>
+    </div>
+    <div
+      class="ForecastData-Cell"
+    >
+      <div
+        class="ForecastData-Cell-Date"
+      >
+        3/4/2020
+      </div>
+      <div
+        class="ForecastData-Cell-IconContainer"
+      >
+        <img
+          alt="3/4/2020 min: 10° / max: 20"
+          class="ForecastData-Cell-Icon"
+          src="https://openweathermap.org/img/wn/01d.png"
+        />
+      </div>
+      <div
+        class="ForecastData-Cell-Temp"
+      >
+        10
+        ° / 
+        20
+        °
+      </div>
+    </div>
+    <div
+      class="ForecastData-Cell"
+    >
+      <div
+        class="ForecastData-Cell-Date"
+      >
+        4/4/2020
+      </div>
+      <div
+        class="ForecastData-Cell-IconContainer"
+      >
+        <img
+          alt="4/4/2020 min: 10° / max: 20"
+          class="ForecastData-Cell-Icon"
+          src="https://openweathermap.org/img/wn/01d.png"
+        />
+      </div>
+      <div
+        class="ForecastData-Cell-Temp"
+      >
+        10
+        ° / 
+        20
+        °
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -15,9 +15,7 @@ export default function ForecastData({ forecastData, isLoading }) {
     if (Object.keys(acc).length === 5 && !acc[date]) return acc
     if (!acc[date]) {
       acc[date] = {
-        icon: acc[date]?.icon
-          ? acc[date]?.icon
-          : `https://openweathermap.org/img/wn/${curr.weather[0].icon.replace('n', 'd')}.png`,
+        icon: `https://openweathermap.org/img/wn/${curr.weather[0].icon.replace('n', 'd')}.png`,
         temp_min: curr.main.temp_min,
         temp_max: curr.main.temp_max,
       }
