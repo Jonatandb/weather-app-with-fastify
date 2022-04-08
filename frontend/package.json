@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "description": "React frontend for WeatherApp-Fastify",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "private": true,
   "author": "jonatandb@gmail.com",
   "proxy": "http://localhost:3001",
@@ -15,6 +15,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.0.4",
+    "jest-fetch-mock": "^3.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "resetMocks": false
   }
 }

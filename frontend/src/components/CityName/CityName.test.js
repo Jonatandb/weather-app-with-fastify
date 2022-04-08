@@ -16,18 +16,13 @@ describe('CityName', () => {
     expect(container).toHaveTextContent('🔎 Detectando ciudad...')
   })
 
-  test('renders null if cityName is not provided', () => {
+  test('renders only 🌃 if cityName is not provided', () => {
     const { container } = render(<CityName />)
-    expect(container).toBeEmptyDOMElement()
+    expect(container).toHaveTextContent('🌃')
   })
 
-  test('renders null if cityName is empty', () => {
+  test('renders only 🌃 if cityName is empty', () => {
     const { container } = render(<CityName cityName='' />)
-    expect(container).toBeEmptyDOMElement()
-  })
-
-  test('renders null if cityName is null', () => {
-    const { container } = render(<CityName cityName={null} />)
-    expect(container).toBeEmptyDOMElement()
+    expect(container).toHaveTextContent('🌃')
   })
 })

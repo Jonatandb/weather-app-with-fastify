@@ -56,6 +56,13 @@
 
 ### Sitios investigados
 
+- https://daily-dev-tips.com/posts/react-snapshot-testing-with-jest/
+- https://github.com/facebook/create-react-app/issues/9935 Proposal: Revert override of jest default resetMocks
+- https://github.com/jefflau/jest-fetch-mock/issues/194#issuecomment-810049252 Getting TypeError: isMocking is not a function or its return value is not iterable
+- https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint
+- https://stackoverflow.com/questions/42398660/how-to-display-emoji-in-react-app
+- https://www.mclibre.org/consultar/htmlcss/html/html-unicode-dibujos.html
+- https://www.leighhalliday.com/mock-fetch-jest
 - https://semver.org/lang/es/
 - https://jestjs.io/docs/configuration
 - https://stackoverflow.com/questions/52508144/jest-test-succeed-with-error-printed-to-console
