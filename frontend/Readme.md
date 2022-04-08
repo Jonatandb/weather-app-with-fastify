@@ -43,7 +43,8 @@
 
 ### Tests/Coverage
 
-> - Ejecutar: _npm test_
+> - npm test
+> - npm run test:coverage (_Luego abrir el archivo: **frontend\coverage\lcov-report\index.html**_)
 
 ---
 
@@ -55,6 +56,31 @@
 
 ### Sitios investigados
 
+- https://semver.org/lang/es/
+- https://jestjs.io/docs/configuration
+- https://stackoverflow.com/questions/52508144/jest-test-succeed-with-error-printed-to-console
+- https://stackoverflow.com/questions/52459910/how-to-test-with-jest-that-reactdom-render-has-been-called-when-it-has-been-wrap
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+- https://github.com/kentcdodds/react-testing-library-examples
+- https://stackoverflow.com/questions/63427988/react-testing-library-match-number-of-buttons
+- https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/prefer-screen-queries.md
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+- https://testing-library.com/docs/queries/about/#priority
+- https://stackoverflow.com/questions/26934719/do-i-need-role-button-on-a-button
+- https://github.com/NoriSte/ui-testing-best-practices
+- https://dev.to/noriste/from-unreadable-react-component-tests-to-simple-stupid-ones-3ge6
+- https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/no-node-access.md
+- https://stackoverflow.com/questions/54234515/get-by-html-element-with-react-testing-library
+- https://noriste.github.io/reactjsday-2019-testing-course/book/intro-to-react-testing/jest-dom.html
+- https://www.freecodecamp.org/news/html-role-attribute
+- https://create-react-app.dev/docs/setting-up-your-editor/#extending-or-replacing-the-default-eslint-config
+- https://create-react-app.dev/docs/setting-up-your-editor/#formatting-code-automatically - husky/lint-staged/prettier
+- https://github.com/testing-library/eslint-plugin-jest-dom
+- https://github.com/testing-library/eslint-plugin-testing-library
+- https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
+- https://github.com/testing-library/jest-dom#custom-matchers
+- https://mui.com/components/skeleton/
+- https://stackoverflow.com/questions/63696265/how-to-get-a-code-coverage-report-with-react-create-app
 - https://realfavicongenerator.net/
 - https://www.ionos.com/tools/favicon-generator
 - https://openweathermap.org/api/one-call-api

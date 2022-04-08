@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "description": "React frontend for WeatherApp-Fastify",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "private": true,
   "author": "jonatandb@gmail.com",
   "proxy": "http://localhost:3001",
@@ -24,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
