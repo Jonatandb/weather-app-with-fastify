@@ -1,0 +1,35 @@
+@media (prefers-reduced-motion: no-preference) {
+  .SpinningIcon-slow {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    animation: SpinningIcon-spin infinite 20s linear;
+  }
+
+  .SpinningIcon-medium {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    animation: SpinningIcon-spin infinite 8s linear;
+  }
+
+  .SpinningIcon-fast {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    animation: SpinningIcon-spin infinite 0.5s linear;
+  }
+}
+
+@keyframes SpinningIcon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
