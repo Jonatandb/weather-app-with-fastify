@@ -22,18 +22,9 @@
 
 ### Ejecución
 
-- 1° Iniciar la ejecución del servidor de backend con el siguiente comando:
-
-> - cd backend
-> - npm start
->   - Tomar nota del puerto configurado en el archivo **_.env_** (PORT) en el que se inicia el backend, ya que este debe ser utilizado por la aplicación web.
-
-- 2° Iniciar luego esta aplicación web:
-
 > - cd frontend
-> - Agregar al archivo **_package.json_** la siguiente línea: `"proxy":"http://localhost:PORT",` - Reemplazar _PORT_ por el número de _PORT_ que está utilizando el backend.
+> - Crear y actualizar archivo _.env_, estableciendo el valor de API_URL (en el caso de que la API no este funcionando en la misma máquina que el frontend) con la URL de la API.
 > - npm start
->   - Generalmente la web se ejecuta en el puerto 3000 _(A menos que esté siendo utilizado por otra aplicación, en ese caso se utilizará un puerto al azar que será mostrado en la consola)_. Por lo que si no se abre automáticamente el navegador con la página, se debe abrir manualmente la dirección http://localhost:3000. (_Dónde 3000 es el puerto que puede variar en caso de estar ocupado y debe ser reemplazado por el número correcto_)
 
 ---
 

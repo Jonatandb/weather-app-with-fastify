@@ -3,9 +3,11 @@ export const WeatherType = {
   Forecast: 'forecast',
 }
 
-export const LOCATION_ENDPOINT = `/v1/location`
-export const CURRENT_WEATHER_ENDPOINT = `/v1/current`
-export const FORECAST_WEATHER_ENDPOINT = `/v1/forecast`
+const API_URL = process.env.API_URL || ''
+
+export const LOCATION_ENDPOINT = `${API_URL}/v1/location`
+export const CURRENT_WEATHER_ENDPOINT = `${API_URL}/v1/current`
+export const FORECAST_WEATHER_ENDPOINT = `${API_URL}/v1/forecast`
 
 export const getCityName = () => {
   return fetch(LOCATION_ENDPOINT)
