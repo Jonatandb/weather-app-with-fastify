@@ -9,6 +9,13 @@ export const LOCATION_ENDPOINT = `${API_URL}/v1/location`
 export const CURRENT_WEATHER_ENDPOINT = `${API_URL}/v1/current`
 export const FORECAST_WEATHER_ENDPOINT = `${API_URL}/v1/forecast`
 
+console.log('\n\n', {
+  API_URL,
+  LOCATION_ENDPOINT,
+  CURRENT_WEATHER_ENDPOINT,
+  FORECAST_WEATHER_ENDPOINT,
+})
+
 export const getCityName = () => {
   return fetch(LOCATION_ENDPOINT)
     .then(res => {
