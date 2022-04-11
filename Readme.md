@@ -8,7 +8,7 @@
 
 <center>
 
-![desktop](/frontend/WeatherApp_Screenshot.gif)
+![desktop](WeatherApp_Screenshot.gif)
 
 </center>
 
