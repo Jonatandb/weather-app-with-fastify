@@ -26,7 +26,7 @@
 
     - **Nota**: _El parámetro "city" es opcional. Si no está presente se usa la cuidad correspondiente a la IP del usuario._
 
-  - **[/openapi](http://localhost:3001/v1/openapi)** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
+  - **/openapi** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
 
 ---
 
@@ -40,7 +40,6 @@
 ### Miscelaneos:
 
 - Utilizar el archivo **_.env.example_** como modelo para crear un archivo llamado **_.env_** que tenga el siguiente contenido:
-  - `PORT` (_Especifica el puerto en que se desea que se ejecute la API._)
   - `IP_API_SERVICE_BASE_URL` _(Especifica la url de la API que provee información sobre la ubicación según la IP proporcionada, viene pre-configurada.)_
   - `WEATHER_SERVICE_API_KEY` _(Especifica la API KEY de Open Weather Map. Requiere registro gratuito.)_
 
@@ -58,16 +57,12 @@
 
 > - npm test
 > - npm run test:coverage (_Luego abrir el archivo: **backend\coverage\lcov-report\index.html**_)
-> - ~~**NOTA** Debido a que tuve problemas para ejecutar los tests, ya que estoy usando módulos de ES con [_Dynamic imports_](https://javascript.info/modules-dynamic-imports) en un proyecto CommonJS, tuve que crear dos nuevos scripts para correr los tests, los cuales utilizan características experimentales de Node JS. (_[Fuente](https://stackoverflow.com/a/61653104/10752198)_). Los nuevos scripts son los siguientes:~~
->   - ~~_npm run test:experimental_~~
->   - ~~_npm run test:coverage:experimental_~~
->     - _(Solucionado instalando versiones anteriores de node-fetch y public-ip totalmente compatibles con CommonJS)_
 
 ---
 
 ### Pendientes/Bugs:
 
-- [https://github.com/Jonatandb/weather-app-with-fastify/issues](https://github.com/Jonatandb/weather-app-with-fastify/issues)
+- [https://github.com/Jonatandb/weatherapp_api/issues](https://github.com/Jonatandb/weatherapp_api/issues)
 
 ---
 
