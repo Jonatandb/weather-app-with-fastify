@@ -3,7 +3,7 @@ export const WeatherType = {
   Forecast: 'forecast',
 }
 
-const API_URL = process.env.API_URL || ''
+const API_URL = process.env.REACT_APP_API_URL || ''
 
 export const LOCATION_ENDPOINT = `${API_URL}/v1/location`
 export const CURRENT_WEATHER_ENDPOINT = `${API_URL}/v1/current`

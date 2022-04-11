@@ -23,7 +23,7 @@
 ### Ejecución
 
 > - cd frontend
-> - Crear y actualizar archivo _.env_, estableciendo el valor de API_URL (en el caso de que la API no este funcionando en la misma máquina que el frontend) con la URL de la API.
+> - Crear y actualizar archivo _.env_, estableciendo el valor de REACT_APP_API_URL (en el caso de que la API no este funcionando en la misma máquina que el frontend) con la URL de la API.
 > - npm start
 
 ---
