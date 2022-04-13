@@ -6,6 +6,21 @@
 
 ---
 
+### Disponible online desde:
+
+- Github pages:
+  - https://jonatandb.github.io/weather-app-with-fastify/
+- Firebase:
+  - https://weatherapp-jdb.web.app
+- Vercel:
+  - https://weatherapp-jdb.vercel.app/
+- Netlify:
+  - https://weatherapp-jdb.netlify.app/
+- Heroku
+  - https://weatherapp-jdb.herokuapp.com/
+
+---
+
 <center>
 
 ![desktop](WeatherApp_Screenshot.gif)
