@@ -54,6 +54,12 @@
 
 ### Miscelaneos
 
+Para hacer el deploy de la aplicación, se debe hacer lo siguiente:
+
+- Quitar del package.json el comando: `"proxy":"http://localhost:PORT",`
+- En caso de querer deployar a Github pages, agregar: `"homepage":"https://yourusername.github.io/repository-name"`
+- Asegurarse de hacer el build con la variable de entorno siguiente correctamente actualizada: `REACT_APP_API_URL=url_de_la_api_de_backend`
+
 ---
 
 ### Tests/Coverage
@@ -70,6 +76,9 @@
 ---
 
 ### Sitios investigados
+
+- https://platzi.com/tutoriales/1548-react/4065-guia-para-usar-github-pages-en-tus-proyectos-de-reactjs/
+- https://www.youtube.com/watch?v=G2FoSpsq3Rw&t=972s&ab_channel=FaztCode Github Pages | Sitios Estaticos Gratis con gh-pages (y Nodejs)
 
 - https://daily-dev-tips.com/posts/react-snapshot-testing-with-jest/
 - https://github.com/facebook/create-react-app/issues/9935 Proposal: Revert override of jest default resetMocks
