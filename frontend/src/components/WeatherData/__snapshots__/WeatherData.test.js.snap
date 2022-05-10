@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WeatherData should render correctly 1`] = `<div />`;
+exports[`WeatherData should render correctly 1`] = `
+<div>
+  <div
+    class="WeatherData-Container"
+  >
+    <div />
+  </div>
+</div>
+`;
 
 exports[`WeatherData should render correctly with data 1`] = `
 <div>
@@ -19,7 +27,7 @@ exports[`WeatherData should render correctly with data 1`] = `
         class="WeatherData-Image-Container"
       >
         <img
-          alt="description 10 "
+          alt="main description 10"
           src="https://openweathermap.org/img/wn/icod@2x.png"
         />
       </div>
@@ -30,60 +38,66 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Temperatura:
+            Temperatura
+            :
           </p>
           <p>
-            10ºC
-          </p>
-        </div>
-        <div
-          class="WeatherData-Row"
-        >
-          <p>
-            Humedad:
-          </p>
-          <p>
-            10%
+            10 ºC
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Presión:
+            Humedad
+            :
           </p>
           <p>
-            10hPa
-          </p>
-        </div>
-        <div
-          class="WeatherData-Row"
-        >
-          <p>
-            Viento:
-          </p>
-          <p>
-            10m/s
+            10 %
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Estado:
+            Presión
+            :
           </p>
           <p>
-            main
+            10 hPa
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Cielo:
+            Viento
+            :
           </p>
           <p>
-            description
+            10 m/s
+          </p>
+        </div>
+        <div
+          class="WeatherData-Row"
+        >
+          <p>
+            Estado
+            :
+          </p>
+          <p>
+            main 
+          </p>
+        </div>
+        <div
+          class="WeatherData-Row"
+        >
+          <p>
+            Cielo
+            :
+          </p>
+          <p>
+            description 
           </p>
         </div>
       </div>
@@ -92,20 +106,35 @@ exports[`WeatherData should render correctly with data 1`] = `
 </div>
 `;
 
-exports[`WeatherData should render correctly with empty data 1`] = `<div />`;
+exports[`WeatherData should render correctly with empty data 1`] = `
+<div>
+  <div
+    class="WeatherData-Container"
+  >
+    <div />
+  </div>
+</div>
+`;
 
 exports[`WeatherData should render correctly with loading 1`] = `
 <div>
   <div
-    class="WeatherData-LoadingMessage"
+    class="WeatherData-Container"
   >
     <div
-      class="SpinningIcon-fast"
-      speed="fast"
+      class="WeatherData-LoadingMessage"
     >
-      ⏳
+      <div
+        class="SpinningIcon-fast"
+        speed="fast"
+      >
+        ⏳
+      </div>
+       
+      <p>
+        Cargando datos del clima...
+      </p>
     </div>
-     Cargando datos del clima...
   </div>
 </div>
 `;

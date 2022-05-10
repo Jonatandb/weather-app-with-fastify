@@ -1,10 +1,9 @@
 {
   "name": "frontend",
   "description": "React frontend for WeatherApp-Fastify",
-  "version": "2.2.2",
+  "version": "5.0.0",
   "private": true,
   "author": "jonatandb@gmail.com",
-  "proxy": "http://localhost:3001",
   "keywords": [
     "react",
     "frontend",
@@ -12,9 +11,10 @@
     "jonatandb"
   ],
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.4",
+    "jest-fetch-mock": "^3.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
@@ -24,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "resetMocks": false
   }
 }

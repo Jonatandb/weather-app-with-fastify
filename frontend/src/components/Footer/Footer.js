@@ -1,40 +1,18 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
+import { getRandomCitiesList } from '../../utils/utils'
 import './Footer.css'
 
-const citiesOfTheWorld = [
-  'Barcelona',
-  'Quito',
-  'San Pablo',
-  'Reykjavik',
-  'Qatar',
-  'Tokyo',
-  'Beijing',
-  'Cairo',
-  'Mumbai',
-  'Mexico City',
-  'Delhi',
-  'Shanghai',
-  'Jakarta',
-]
-export default function Footer({ selectCity }) {
-  const getfivecities = useMemo(() => {
-    const fivecities = []
-    for (let i = 0; i < 5; i++) {
-      const randomCity = citiesOfTheWorld[Math.floor(Math.random() * citiesOfTheWorld.length)]
-      if (!fivecities.includes(randomCity)) {
-        fivecities.push(randomCity)
-      } else {
-        i--
-      }
-    }
-    return fivecities
-  }, [])
-
+const Footer = ({ selectCity }) => {
+  const randomCitiesList = useMemo(() => getRandomCitiesList(5), [])
   return (
     <>
       <div className='Footer-links'>
-        {getfivecities.map(city => (
-          <p key={city} onClick={() => selectCity(city)}>
+        {randomCitiesList.map(city => (
+          <p
+            key={city}
+            onClick={() => selectCity && typeof selectCity === 'function' && selectCity(city)}
+            role='button'
+          >
             {city}
           </p>
         ))}
@@ -50,3 +28,5 @@ export default function Footer({ selectCity }) {
     </>
   )
 }
+
+export default React.memo(Footer)

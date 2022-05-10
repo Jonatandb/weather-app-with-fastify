@@ -15,9 +15,7 @@ export default function ForecastData({ forecastData, isLoading }) {
     if (Object.keys(acc).length === 5 && !acc[date]) return acc
     if (!acc[date]) {
       acc[date] = {
-        icon: acc[date]?.icon
-          ? acc[date]?.icon
-          : `https://openweathermap.org/img/wn/${curr.weather[0].icon.replace('n', 'd')}.png`,
+        icon: `https://openweathermap.org/img/wn/${curr.weather[0].icon.replace('n', 'd')}.png`,
         temp_min: curr.main.temp_min,
         temp_max: curr.main.temp_max,
       }
@@ -39,11 +37,13 @@ export default function ForecastData({ forecastData, isLoading }) {
           return (
             <div className='ForecastData-Cell' key={date}>
               <div className='ForecastData-Cell-Date'>{date}</div>
-              <img
-                className='ForecastData-Cell-Icon'
-                src={icon}
-                alt={`${date} min: ${temp_min}° / max: ${temp_max}`}
-              ></img>
+              <div className='ForecastData-Cell-IconContainer'>
+                <img
+                  className='ForecastData-Cell-Icon'
+                  src={icon}
+                  alt={`${date} min: ${temp_min}° / max: ${temp_max}`}
+                />
+              </div>
               <div className='ForecastData-Cell-Temp'>
                 {temp_min}° / {temp_max}°
               </div>

@@ -1,4 +1,4 @@
-const { render } = require('@testing-library/react')
+const { render, screen } = require('@testing-library/react')
 const { default: WeatherData } = require('./WeatherData')
 
 describe('WeatherData', () => {

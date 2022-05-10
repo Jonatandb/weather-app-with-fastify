@@ -1,6 +1,6 @@
 ### Características generales y técnicas:
 
-- Desarrollado sobre Node.js usando JavaScript.
+- Desarrollado con JavaScript utilizando Node.js.
 - Se utiliza el API del servicio de clima [Open Weather Map](https://openweathermap.org/).
 - La ciudad actual se detecta con la IP del usuario, utilizando el servicio de [IP-API](https://ip-api.com/).
 
@@ -14,7 +14,7 @@
 
 ---
 
-### Esta API provee en formato JSON el estado del tiempo basado en diferentes endpoints:
+### Esta API provee en formato JSON el estado del tiempo por medio de diferentes endpoints:
 
 - Ruta base:
   - **/v1**
@@ -26,7 +26,7 @@
 
     - **Nota**: _El parámetro "city" es opcional. Si no está presente se usa la cuidad correspondiente a la IP del usuario._
 
-  - **[/openapi](http://localhost:3001/v1/openapi)** (_Swagger (openapi): Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
+  - **[/openapi](http://localhost:3001/v1/openapi)** (_Swagger: Interfaz web que muestra documentación de la API y permite interactuar con los endpoints_)
 
 ---
 
