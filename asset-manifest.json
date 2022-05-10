@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/weather-app-with-fastify/static/css/main.4564c943.css",
-    "main.js": "/weather-app-with-fastify/static/js/main.b4d74fda.js",
+    "main.js": "/weather-app-with-fastify/static/js/main.17326128.js",
     "index.html": "/weather-app-with-fastify/index.html",
     "main.4564c943.css.map": "/weather-app-with-fastify/static/css/main.4564c943.css.map",
-    "main.b4d74fda.js.map": "/weather-app-with-fastify/static/js/main.b4d74fda.js.map"
+    "main.17326128.js.map": "/weather-app-with-fastify/static/js/main.17326128.js.map"
   },
   "entrypoints": [
     "static/css/main.4564c943.css",
-    "static/js/main.b4d74fda.js"
+    "static/js/main.17326128.js"
   ]
 }
