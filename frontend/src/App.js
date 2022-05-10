@@ -6,7 +6,11 @@ import ErrorMessage from './components/ErrorMessage/ErrorMessage'
 import WeatherData from './components/WeatherData/WeatherData'
 import ForecastData from './components/ForecastData/ForecastData'
 import Footer from './components/Footer/Footer'
-import { getCityName, getWeatherForecastDataByCity, WeatherType } from './lib/lib'
+import {
+  getCityName,
+  getWeatherForecastDataByCity,
+  WeatherType,
+} from './lib/lib'
 
 function App() {
   const [cityName, setCityName] = useState('')
@@ -18,61 +22,51 @@ function App() {
   const [forecastData, setForecastData] = useState(null)
 
   useEffect(() => {
-    async function getCity() {
-      getCityName()
-        .then(locationCityName => {
-          if (!locationCityName) throw new Error('No se pudo obtener el nombre de la ciudad 🤷‍♂️')
-          setCityName(locationCityName)
-          setLoadingCityName(false)
-        })
-        .catch(err => {
-          console.error(err)
-          setErrorGettingData(true)
-          setLoadingCityName(false)
-        })
-    }
-    getCity()
+    getCityName()
+      .then(setCityName)
+      .catch(() => {
+        console.error('No se pudo obtener el nombre de la ciudad 🤷‍♂️')
+        setErrorGettingData(true)
+      })
+      .finally(() => setLoadingCityName(false))
   }, [])
 
   useEffect(() => {
     if (cityName && !loadingCityName) {
-      async function getWeatherDataByCity() {
-        setLoadingWeatherData(true)
-        const weatherDataResult = await getWeatherForecastDataByCity(WeatherType.Weather, cityName)
-        setLoadingWeatherData(false)
-        if (weatherDataResult) {
-          setWeatherData(weatherDataResult)
-        } else {
-          console.error('Error getting weather data for city:', cityName)
-          setCityName('')
-          setErrorGettingData(true)
-          setWeatherData(null)
-          setForecastData(null)
-        }
-      }
-
-      async function getForecastDataByCity() {
-        setLoadingForecastData(true)
-        const forecastDataResult = await getWeatherForecastDataByCity(
-          WeatherType.Forecast,
-          cityName
-        )
-        setLoadingForecastData(false)
-        if (forecastDataResult) {
-          setForecastData(forecastDataResult)
-        } else {
-          console.error('Error getting forecast data for city:', cityName)
-          setCityName('')
-          setErrorGettingData(true)
-          setWeatherData(null)
-          setForecastData(null)
-        }
-      }
       setErrorGettingData(false)
-      getWeatherDataByCity()
-      getForecastDataByCity()
+      setLoadingWeatherData(true)
+      setLoadingForecastData(true)
+
+      Promise.all([
+        getWeatherForecastDataByCity(WeatherType.Weather, cityName),
+        getWeatherForecastDataByCity(WeatherType.Forecast, cityName),
+      ])
+        .then(([weatherDataResult, forecastDataResult]) => {
+          if (!weatherDataResult)
+            throw new Error(
+              'Error getting weather data for city: ' + cityName || '',
+            )
+
+          if (!forecastDataResult)
+            throw new Error(
+              'Error getting forecast data for city: ' + cityName || '',
+            )
+
+          setWeatherData(weatherDataResult)
+          setForecastData(forecastDataResult)
+        })
+        .catch(error => {
+          console.error(error)
+          setErrorGettingData(true)
+          setWeatherData(null)
+          setForecastData(null)
+        })
+        .finally(() => {
+          setLoadingWeatherData(false)
+          setLoadingForecastData(false)
+        })
     }
-  }, [cityName, loadingCityName, errorGettingData])
+  }, [cityName, loadingCityName])
 
   return (
     <div className='App'>
@@ -80,11 +74,19 @@ function App() {
         <Header />
         <CityName isLoading={loadingCityName} cityName={cityName} />
         {errorGettingData || loadingCityName ? (
-          <ErrorMessage msg={errorGettingData && 'Error al obtener los datos 💀'} />
+          <ErrorMessage
+            msg={errorGettingData && 'Error al obtener los datos 💀'}
+          />
         ) : (
           <>
-            <WeatherData weatherData={weatherData} isLoading={loadingWeatherData} />
-            <ForecastData forecastData={forecastData} isLoading={loadingForecastData} />
+            <WeatherData
+              weatherData={weatherData}
+              isLoading={loadingWeatherData}
+            />
+            <ForecastData
+              forecastData={forecastData}
+              isLoading={loadingForecastData}
+            />
           </>
         )}
         <Footer selectCity={setCityName} />

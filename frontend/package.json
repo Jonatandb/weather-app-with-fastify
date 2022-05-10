@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "description": "React frontend for WeatherApp-Fastify",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "private": true,
   "author": "jonatandb@gmail.com",
   "keywords": [
