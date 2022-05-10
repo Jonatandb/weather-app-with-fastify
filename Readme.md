@@ -22,7 +22,7 @@
 
 <center>
 
-![desktop](/frontend/WeatherApp_Screenshot.gif)
+![desktop](/frontend/WeatherApp_Screenshot_v5.gif)
 
 </center>
 
