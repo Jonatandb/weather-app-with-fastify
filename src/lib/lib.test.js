@@ -26,41 +26,56 @@ describe('getWeatherForecastDataByCity', () => {
   // weather ✔️   city ✔️ => weatherData ✔️
   it('should return weather data if weatherType is Weather and city is not null', async () => {
     fetch.mockResponseOnce(JSON.stringify(Data.Weather))
-    const weatherData = await getWeatherForecastDataByCity(WeatherType.Weather, 'cityName')
+    const weatherData = await getWeatherForecastDataByCity(
+      WeatherType.Weather,
+      'cityName',
+    )
     expect(fetch).toHaveBeenCalledWith(CURRENT_WEATHER_ENDPOINT + '/cityName')
     expect(weatherData).toEqual(Data.Weather)
   })
 
   // weather ✔️     city null => null
-  // weather null  city ✔️    => null
   it('should return null if weatherType is Weather and city is null', async () => {
-    const weatherData = await getWeatherForecastDataByCity(WeatherType.Weather, null)
-    expect(weatherData).toEqual(null)
-    const weatherData2 = await getWeatherForecastDataByCity(null, 'cityName')
-    expect(weatherData2).toEqual(null)
+    await expect(
+      getWeatherForecastDataByCity(WeatherType.Weather, null),
+    ).rejects.toBe(null)
+  })
+
+  // weather null  city ✔️    => null
+  it('should return null if weatherType is null and city is not null', async () => {
+    await expect(getWeatherForecastDataByCity(null, 'cityName')).rejects.toBe(
+      null,
+    )
   })
 
   // forecast ✔️   city ✔️ => forecastData ✔️
   it('should return forecast data if weatherType is Forecast and city is not null', async () => {
     fetch.mockResponseOnce(JSON.stringify(Data.Forecast))
-    const forecastData = await getWeatherForecastDataByCity(WeatherType.Forecast, 'cityName')
+    const forecastData = await getWeatherForecastDataByCity(
+      WeatherType.Forecast,
+      'cityName',
+    )
     expect(fetch).toHaveBeenCalledWith(FORECAST_WEATHER_ENDPOINT + '/cityName')
     expect(forecastData).toEqual(Data.Forecast)
   })
 
   // forecast ✔️     city null => null
-  // forecast null  city ✔️    => null
   it('should return null if weatherType is Forecast and city is null', async () => {
-    const forecastData = await getWeatherForecastDataByCity(WeatherType.Forecast, null)
-    expect(forecastData).toEqual(null)
-    const forecastData2 = await getWeatherForecastDataByCity(null, 'cityName')
-    expect(forecastData2).toEqual(null)
+    await expect(
+      getWeatherForecastDataByCity(WeatherType.Forecast, null),
+    ).rejects.toBe(null)
+  })
+
+  // forecast null  city ✔️    => null
+  it('should return null if weatherType forecast is null and city is not null', async () => {
+    await expect(getWeatherForecastDataByCity(null, 'cityName')).rejects.toBe(
+      null,
+    )
   })
 
   // weather null  city null => null
   it('should return null if weatherType is null and city is null', async () => {
-    const forecastData = await getWeatherForecastDataByCity(null, null)
-    expect(forecastData).toEqual(null)
+    await expect(getWeatherForecastDataByCity(null, null)).rejects.toBe(null)
   })
 })
 
@@ -112,17 +127,20 @@ describe('parseWeatherData', () => {
     const { temp, humidity, pressure } = main
     const { speed } = wind
     const { main: weatherMain, description, icon } = weather[0]
-    const iconURL = `https://openweathermap.org/img/wn/${icon.replace('n', 'd')}@2x.png`
+    const iconURL = `https://openweathermap.org/img/wn/${icon.replace(
+      'n',
+      'd',
+    )}@2x.png`
 
     const parsedWeatherData = await parseWeatherData(weatherData)
     expect(parsedWeatherData).toEqual({
       items: [
-        { description: 'Temperatura:', value: temp, suffix: 'ºC' },
-        { description: 'Humedad:', value: humidity, suffix: '%' },
-        { description: 'Presión:', value: pressure, suffix: 'hPa' },
-        { description: 'Viento:', value: speed, suffix: 'm/s' },
-        { description: 'Estado:', value: weatherMain, suffix: '' },
-        { description: 'Cielo:', value: description, suffix: '' },
+        { description: 'Temperatura', value: temp, suffix: 'ºC' },
+        { description: 'Humedad', value: humidity, suffix: '%' },
+        { description: 'Presión', value: pressure, suffix: 'hPa' },
+        { description: 'Viento', value: speed, suffix: 'm/s' },
+        { description: 'Estado', value: weatherMain, suffix: '' },
+        { description: 'Cielo', value: description, suffix: '' },
       ],
       icon: { url: iconURL, alt: `${weatherMain} ${description} ${temp}` },
     })

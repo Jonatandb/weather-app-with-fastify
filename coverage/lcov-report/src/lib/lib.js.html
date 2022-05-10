@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">94.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/33</span>
+                <span class='fraction'>34/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>14/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.77% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.54% </span>
+                <span class="strong">96.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/31</span>
+                <span class='fraction'>32/33</span>
             </div>
         
             
@@ -128,10 +128,14 @@
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -143,18 +147,17 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -175,6 +178,9 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,16 +197,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const WeatherType = {
   Weather: 'current',
   Forecast: 'forecast',
 }
 &nbsp;
-export const LOCATION_ENDPOINT = `/v1/location`
-export const CURRENT_WEATHER_ENDPOINT = `/v1/current`
-export const FORECAST_WEATHER_ENDPOINT = `/v1/forecast`
+const API_URL = process.env.REACT_APP_API_URL || <span class="branch-1 cbranch-no" title="branch not covered" >''</span>
+&nbsp;
+export const LOCATION_ENDPOINT = `${API_URL}/location`
+export const CURRENT_WEATHER_ENDPOINT = `${API_URL}/current`
+export const FORECAST_WEATHER_ENDPOINT = `${API_URL}/forecast`
 &nbsp;
 export const getCityName = () =&gt; {
   return fetch(LOCATION_ENDPOINT)
@@ -208,19 +214,18 @@ export const getCityName = () =&gt; {
       <span class="missing-if-branch" title="if path not taken" >I</span>if (!res.ok) <span class="cstat-no" title="statement not covered" >throw new Error(res.statusText)</span>
       return res.text()
     })
-    .then(cityName =&gt; cityName)
-    .catch(<span class="fstat-no" title="function not covered" >er</span>r =&gt; {
-<span class="cstat-no" title="statement not covered" >      throw err</span>
+    .then(cityName =&gt; {
+      if (!cityName) throw new Error('Error getting city name')
+      return cityName
+    })
+    .catch(err =&gt; {
+      throw err
     })
 }
 &nbsp;
 export const getWeatherForecastDataByCity = (weatherType, cityName) =&gt; {
-  if (
-    !weatherType ||
-    !cityName ||
-    (weatherType !== WeatherType.Weather &amp;&amp; weatherType !== WeatherType.Forecast)
-  )
-    return null
+  if (!Object.values(WeatherType).includes(weatherType) || !cityName)
+    return Promise.reject(null)
   let apiURL = `${CURRENT_WEATHER_ENDPOINT}/${cityName}`
   if (weatherType !== WeatherType.Weather) {
     apiURL = `${FORECAST_WEATHER_ENDPOINT}/${cityName}`
@@ -238,16 +243,19 @@ export const parseWeatherData = weatherData =&gt; {
     const { temp, humidity, pressure } = main
     const { speed } = wind
     const { main: weatherMain, description, icon } = weather[0]
-    const iconURL = `https://openweathermap.org/img/wn/${icon.replace('n', 'd')}@2x.png`
+    const iconURL = `https://openweathermap.org/img/wn/${icon.replace(
+      'n',
+      'd',
+    )}@2x.png`
 &nbsp;
     return {
       items: [
-        { description: 'Temperatura:', value: temp, suffix: 'ºC' },
-        { description: 'Humedad:', value: humidity, suffix: '%' },
-        { description: 'Presión:', value: pressure, suffix: 'hPa' },
-        { description: 'Viento:', value: speed, suffix: 'm/s' },
-        { description: 'Estado:', value: weatherMain, suffix: '' },
-        { description: 'Cielo:', value: description, suffix: '' },
+        { description: 'Temperatura', value: temp, suffix: 'ºC' },
+        { description: 'Humedad', value: humidity, suffix: '%' },
+        { description: 'Presión', value: pressure, suffix: 'hPa' },
+        { description: 'Viento', value: speed, suffix: 'm/s' },
+        { description: 'Estado', value: weatherMain, suffix: '' },
+        { description: 'Cielo', value: description, suffix: '' },
       ],
       icon: { url: iconURL, alt: `${weatherMain} ${description} ${temp}` },
     }
@@ -256,8 +264,6 @@ export const parseWeatherData = weatherData =&gt; {
     return null
   }
 }
-&nbsp;
-// parse forecast data
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -265,7 +271,7 @@ export const parseWeatherData = weatherData =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Apr 08 2022 13:40:08 GMT-0300 (hora estándar de Argentina)
+                at Tue May 10 2022 12:22:18 GMT-0300 (hora estándar de Argentina)
             </div>
         <script src="../../prettify.js"></script>
         <script>

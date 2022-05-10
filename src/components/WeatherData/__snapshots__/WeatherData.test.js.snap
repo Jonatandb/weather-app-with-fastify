@@ -38,66 +38,66 @@ exports[`WeatherData should render correctly with data 1`] = `
           class="WeatherData-Row"
         >
           <p>
-            Temperatura:
+            Temperatura
             :
           </p>
           <p>
-            10ºC
+            10 ºC
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Humedad:
+            Humedad
             :
           </p>
           <p>
-            10%
+            10 %
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Presión:
+            Presión
             :
           </p>
           <p>
-            10hPa
+            10 hPa
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Viento:
+            Viento
             :
           </p>
           <p>
-            10m/s
+            10 m/s
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Estado:
+            Estado
             :
           </p>
           <p>
-            main
+            main 
           </p>
         </div>
         <div
           class="WeatherData-Row"
         >
           <p>
-            Cielo:
+            Cielo
             :
           </p>
           <p>
-            description
+            description 
           </p>
         </div>
       </div>
