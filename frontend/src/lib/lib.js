@@ -3,9 +3,11 @@ export const WeatherType = {
   Forecast: 'forecast',
 }
 
-export const LOCATION_ENDPOINT = `/v1/location`
-export const CURRENT_WEATHER_ENDPOINT = `/v1/current`
-export const FORECAST_WEATHER_ENDPOINT = `/v1/forecast`
+const API_URL = process.env.REACT_APP_API_URL || ''
+
+export const LOCATION_ENDPOINT = `${API_URL}/location`
+export const CURRENT_WEATHER_ENDPOINT = `${API_URL}/current`
+export const FORECAST_WEATHER_ENDPOINT = `${API_URL}/forecast`
 
 export const getCityName = () => {
   return fetch(LOCATION_ENDPOINT)
@@ -13,19 +15,18 @@ export const getCityName = () => {
       if (!res.ok) throw new Error(res.statusText)
       return res.text()
     })
-    .then(cityName => cityName)
+    .then(cityName => {
+      if (!cityName) throw new Error('Error getting city name')
+      return cityName
+    })
     .catch(err => {
       throw err
     })
 }
 
 export const getWeatherForecastDataByCity = (weatherType, cityName) => {
-  if (
-    !weatherType ||
-    !cityName ||
-    (weatherType !== WeatherType.Weather && weatherType !== WeatherType.Forecast)
-  )
-    return null
+  if (!Object.values(WeatherType).includes(weatherType) || !cityName)
+    return Promise.reject(null)
   let apiURL = `${CURRENT_WEATHER_ENDPOINT}/${cityName}`
   if (weatherType !== WeatherType.Weather) {
     apiURL = `${FORECAST_WEATHER_ENDPOINT}/${cityName}`
@@ -43,16 +44,19 @@ export const parseWeatherData = weatherData => {
     const { temp, humidity, pressure } = main
     const { speed } = wind
     const { main: weatherMain, description, icon } = weather[0]
-    const iconURL = `https://openweathermap.org/img/wn/${icon.replace('n', 'd')}@2x.png`
+    const iconURL = `https://openweathermap.org/img/wn/${icon.replace(
+      'n',
+      'd',
+    )}@2x.png`
 
     return {
       items: [
-        { description: 'Temperatura:', value: temp, suffix: 'ºC' },
-        { description: 'Humedad:', value: humidity, suffix: '%' },
-        { description: 'Presión:', value: pressure, suffix: 'hPa' },
-        { description: 'Viento:', value: speed, suffix: 'm/s' },
-        { description: 'Estado:', value: weatherMain, suffix: '' },
-        { description: 'Cielo:', value: description, suffix: '' },
+        { description: 'Temperatura', value: temp, suffix: 'ºC' },
+        { description: 'Humedad', value: humidity, suffix: '%' },
+        { description: 'Presión', value: pressure, suffix: 'hPa' },
+        { description: 'Viento', value: speed, suffix: 'm/s' },
+        { description: 'Estado', value: weatherMain, suffix: '' },
+        { description: 'Cielo', value: description, suffix: '' },
       ],
       icon: { url: iconURL, alt: `${weatherMain} ${description} ${temp}` },
     }
@@ -61,5 +65,3 @@ export const parseWeatherData = weatherData => {
     return null
   }
 }
-
-// parse forecast data
