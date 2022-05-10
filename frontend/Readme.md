@@ -1,6 +1,6 @@
 ### Características generales y técnicas
 
-- Esta App permite muestra información sobre el clima para la ciudad acutal así como también el pronósitoco para los próximos cinco días. También permite obtener la misma información de hasta 5 ciudades más.
+- Esta App muestra información sobre el clima para la ciudad acutal así como también el pronóstico para los próximos cinco días. También permite obtener la misma información de hasta 5 ciudades más.
 - Desarrollado con React mediante la herramienta _Create-React-App_.
 - Se utiliza el API de la carpeta backend para obtener y mostrar datos del clima de [Open Weather Map](https://openweathermap.org/).
 
@@ -46,7 +46,6 @@
 - 2° Iniciar luego esta aplicación web:
 
 > - cd frontend
-> - Agregar al archivo **_package.json_** la siguiente línea: `"proxy":"http://localhost:PORT",` - Reemplazar _PORT_ por el número de _PORT_ que está utilizando el backend.
 > - npm start
 >   - Generalmente la web se ejecuta en el puerto 3000 _(A menos que esté siendo utilizado por otra aplicación, en ese caso se utilizará un puerto al azar que será mostrado en la consola)_. Por lo que si no se abre automáticamente el navegador con la página, se debe abrir manualmente la dirección http://localhost:3000. (_Dónde 3000 es el puerto que puede variar en caso de estar ocupado y debe ser reemplazado por el número correcto_)
 
@@ -56,9 +55,8 @@
 
 Para hacer el deploy de la aplicación, se debe hacer lo siguiente:
 
-- Quitar del package.json el comando: `"proxy":"http://localhost:PORT",`
-- En caso de querer deployar a Github pages, agregar: `"homepage":"https://yourusername.github.io/repository-name"`
-- Asegurarse de hacer el build con la variable de entorno siguiente correctamente actualizada: `REACT_APP_API_URL=url_de_la_api_de_backend`
+- En caso de querer deployar a Github pages, agregar al package.json: `"homepage":"https://yourusername.github.io/repository-name"`
+- Asegurarse de hacer el build con la variable de entorno siguiente correctamente actualizada en el archivo `.env`: `REACT_APP_API_URL=url_de_la_api_de_backend`
 
 ---
 
@@ -77,6 +75,10 @@ Para hacer el deploy de la aplicación, se debe hacer lo siguiente:
 
 ### Sitios investigados
 
+- https://jestjs.io/docs/troubleshooting
+- https://github.com/jefflau/jest-fetch-mock#readme
+- https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+- https://stackoverflow.com/questions/53038032/typeerror-promise-is-not-iterable
 - https://platzi.com/tutoriales/1548-react/4065-guia-para-usar-github-pages-en-tus-proyectos-de-reactjs/
 - https://www.youtube.com/watch?v=G2FoSpsq3Rw&t=972s&ab_channel=FaztCode Github Pages | Sitios Estaticos Gratis con gh-pages (y Nodejs)
 
