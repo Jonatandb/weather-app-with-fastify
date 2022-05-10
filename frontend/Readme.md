@@ -40,12 +40,14 @@
 - 1° Iniciar la ejecución del servidor de backend con el siguiente comando:
 
 > - cd backend
+> - Actualizar el archivo **_.env_** (crearlo copiando **_.env.example_**) con el siguiente contenido: `WEATHER_SERVICE_API_KEY` y `PORT`.
 > - npm start
 >   - Tomar nota del puerto configurado en el archivo **_.env_** (PORT) en el que se inicia el backend, ya que este debe ser utilizado por la aplicación web.
 
 - 2° Iniciar luego esta aplicación web:
 
 > - cd frontend
+> - Actualizar el archivo **_.env_** (crearlo copiando **_.env.example_**) con el siguiente contenido: `REACT_APP_API_URL`
 > - npm start
 >   - Generalmente la web se ejecuta en el puerto 3000 _(A menos que esté siendo utilizado por otra aplicación, en ese caso se utilizará un puerto al azar que será mostrado en la consola)_. Por lo que si no se abre automáticamente el navegador con la página, se debe abrir manualmente la dirección http://localhost:3000. (_Dónde 3000 es el puerto que puede variar en caso de estar ocupado y debe ser reemplazado por el número correcto_)
 
