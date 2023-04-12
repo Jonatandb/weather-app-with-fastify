@@ -16,8 +16,6 @@
   - https://weatherapp-jdb.vercel.app/
 - Netlify:
   - https://weatherapp-jdb.netlify.app/
-- Heroku
-  - https://weatherapp-jdb.herokuapp.com/
 
 ---
 
