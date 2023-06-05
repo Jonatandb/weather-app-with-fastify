@@ -35,6 +35,11 @@ El proyecto "backend" es la rama __main__ del repositorio:
 El proyecto "frontend" es la rama __master__ del repositorio:
 - https://github.com/Jonatandb/weatherapp_frontend.git
 
+Por lo que para actualizarlos hay que ejecutar desde la raíz del proyecto:
+
+    - Backend: git subtree pull --prefix=backend https://github.com/Jonatandb/weatherapp_api.git main
+    - Frontend: git subtree pull --prefix=backend https://github.com/Jonatandb/weatherapp_frontend.git master
+
 ---
 
 Los subárboles en Git son una forma de incrustar un repositorio Git completo dentro de otro repositorio Git como una subcarpeta. A diferencia de los submódulos, los subárboles mantienen su propio historial de cambios independiente y permiten una gestión más granular del repositorio embebido.
