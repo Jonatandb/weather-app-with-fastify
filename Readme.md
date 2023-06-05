@@ -37,8 +37,9 @@ El proyecto "frontend" es la rama __master__ del repositorio:
 
 Por lo que para actualizarlos hay que ejecutar desde la raíz del proyecto:
 
-    - Backend: git subtree pull --prefix=backend https://github.com/Jonatandb/weatherapp_api.git main
-    - Frontend: git subtree pull --prefix=backend https://github.com/Jonatandb/weatherapp_frontend.git master
+    - git subtree pull --prefix=backend https://github.com/Jonatandb/weatherapp_api.git main
+
+    - git subtree pull --prefix=frontend https://github.com/Jonatandb/weatherapp_frontend.git master
 
 ---
 
