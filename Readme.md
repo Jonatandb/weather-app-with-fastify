@@ -67,7 +67,7 @@
 
 ### Pendientes/Bugs:
 
-- [https://github.com/Jonatandb/weatherapp_api/issues](https://github.com/Jonatandb/weatherapp_api/issues)
+- [https://github.com/Jonatandb/weather-app-with-fastify/issues](https://github.com/Jonatandb/weather-app-with-fastify/issues)
 
 ---
 
