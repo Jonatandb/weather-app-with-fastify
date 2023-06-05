@@ -29,6 +29,14 @@
 
 #### Este repo funciona como "concentrador" de los dos repos subyacentes, configurados como 'sub-árboles' de git:
 
+El proyecto "backend" es la rama __main__ del repositorio:
+- https://github.com/Jonatandb/weatherapp_api.git
+
+El proyecto "frontend" es la rama __master__ del repositorio:
+- https://github.com/Jonatandb/weatherapp_frontend.git
+
+---
+
 Los subárboles en Git son una forma de incrustar un repositorio Git completo dentro de otro repositorio Git como una subcarpeta. A diferencia de los submódulos, los subárboles mantienen su propio historial de cambios independiente y permiten una gestión más granular del repositorio embebido.
 
 Aquí hay una explicación más detallada de cómo usar los subárboles en Git:
