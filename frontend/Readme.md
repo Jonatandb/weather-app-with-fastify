@@ -16,14 +16,12 @@
   - https://weatherapp-jdb.vercel.app/
 - Netlify:
   - https://weatherapp-jdb.netlify.app/
-- Heroku
-  - https://weatherapp-jdb.herokuapp.com/
 
 ---
 
 <center>
 
-![desktop](/frontend/WeatherApp_Screenshot.gif)
+![desktop](/frontend/WeatherApp_Screenshot_v5.gif)
 
 </center>
 
@@ -57,8 +55,9 @@
 
 Para hacer el deploy de la aplicación, se debe hacer lo siguiente:
 
-- En caso de querer deployar a Github pages, agregar al package.json: `"homepage":"https://yourusername.github.io/repository-name"`
 - Asegurarse de hacer el build con la variable de entorno siguiente correctamente actualizada en el archivo `.env`: `REACT_APP_API_URL=url_de_la_api_de_backend`
+- En caso de querer deployar a Github pages, agregar al package.json: `"homepage":"https://yourusername.github.io/repository-name"`
+  > npm run build
 
 ---
 

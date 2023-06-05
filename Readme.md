@@ -15,14 +15,12 @@
   - https://weatherapp-jdb.vercel.app/
 - Netlify:
   - https://weatherapp-jdb.netlify.app/
-- Heroku
-  - https://weatherapp-jdb.herokuapp.com/
 
 ---
 
 <center>
 
-![desktop](/frontend/WeatherApp_Screenshot.gif)
+![desktop](/frontend/WeatherApp_Screenshot_v5.gif)
 
 </center>
 
