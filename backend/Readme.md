@@ -1,6 +1,6 @@
 ### Características generales y técnicas:
 
-- Desarrollado sobre Node.js usando JavaScript.
+- Desarrollado con JavaScript utilizando Node.js.
 - Se utiliza el API del servicio de clima [Open Weather Map](https://openweathermap.org/).
 - La ciudad actual se detecta con la IP del usuario, utilizando el servicio de [IP-API](https://ip-api.com/).
 
@@ -14,7 +14,7 @@
 
 ---
 
-### Esta API provee en formato JSON el estado del tiempo basado en diferentes endpoints:
+### Esta API provee en formato JSON el estado del tiempo por medio de diferentes endpoints:
 
 - Ruta base:
   - **/v1**
@@ -40,6 +40,7 @@
 ### Miscelaneos:
 
 - Utilizar el archivo **_.env.example_** como modelo para crear un archivo llamado **_.env_** que tenga el siguiente contenido:
+  - `PORT` (_Especifica el puerto en que se desea que se ejecute la API._)
   - `IP_API_SERVICE_BASE_URL` _(Especifica la url de la API que provee información sobre la ubicación según la IP proporcionada, viene pre-configurada.)_
   - `WEATHER_SERVICE_API_KEY` _(Especifica la API KEY de Open Weather Map. Requiere registro gratuito.)_
 
@@ -57,6 +58,10 @@
 
 > - npm test
 > - npm run test:coverage (_Luego abrir el archivo: **backend\coverage\lcov-report\index.html**_)
+> - ~~**NOTA** Debido a que tuve problemas para ejecutar los tests, ya que estoy usando módulos de ES con [_Dynamic imports_](https://javascript.info/modules-dynamic-imports) en un proyecto CommonJS, tuve que crear dos nuevos scripts para correr los tests, los cuales utilizan características experimentales de Node JS. (_[Fuente](https://stackoverflow.com/a/61653104/10752198)_). Los nuevos scripts son los siguientes:~~
+>   - ~~_npm run test:experimental_~~
+>   - ~~_npm run test:coverage:experimental_~~
+>     - _(Solucionado instalando versiones anteriores de node-fetch y public-ip totalmente compatibles con CommonJS)_
 
 ---
 

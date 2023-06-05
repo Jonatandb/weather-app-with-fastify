@@ -9,7 +9,14 @@ const swagger_config = require('./swagger_config')
 const build = function (opts = {}) {
   const app = fastify(opts)
 
-  app.register(require('fastify-cors'))
+  app.register(require('fastify-cors'), {
+    origin: [
+      'https://jonatandb.github.io',
+      'https://weatherapp-jdb.web.app',
+      'https://weatherapp-jdb.netlify.app',
+      'https://weatherapp-jdb.vercel.app',
+    ],
+  })
   app.register(require('fastify-swagger'), swagger_config)
   app.register(locationRoute, { prefix: '/v1' })
   app.register(currentRoute, { prefix: '/v1' })
