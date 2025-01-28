@@ -15,7 +15,7 @@
 
 ---
 
-### Disponible online desde:
+### 🚀 Sitio Web
 
 - Github pages:
   - https://jonatandb.github.io/weather-app-with-fastify/
@@ -27,6 +27,17 @@
   - https://weatherapp-jdb.netlify.app/
 
 ---
+
+## 👨🏻‍💻 Tecnologías usadas
+- Frontend
+  - React
+  - Jest
+- Backend
+  - NodeJS
+  - Fastify
+  - Jest
+---
+
 #### Este repo funciona como "concentrador" de los dos repos subyacentes, configurados como 'sub-árboles' de git:
 
 El proyecto "backend" es la rama __main__ del repositorio:
