@@ -5,6 +5,16 @@
 
 ---
 
+
+<p align="center">
+  <a href="https://weatherapp-jdb.web.app" target="_blank">
+    <img src="/frontend/WeatherApp_Screenshot_v5.gif" alt="WeatherApp-Fastify - Pronóstico del clima en tu ciudad por Jonatandb" />
+  </a>
+</p>
+
+
+---
+
 ### Disponible online desde:
 
 - Github pages:
@@ -17,16 +27,6 @@
   - https://weatherapp-jdb.netlify.app/
 
 ---
-
-<center>
-
-![desktop](/frontend/WeatherApp_Screenshot_v5.gif)
-
-</center>
-
-
----
-
 #### Este repo funciona como "concentrador" de los dos repos subyacentes, configurados como 'sub-árboles' de git:
 
 El proyecto "backend" es la rama __main__ del repositorio:
