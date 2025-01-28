@@ -1,7 +1,7 @@
-# Aplicación con información del clima: WeatherApp-Fastify
+# 🌤 WeatherApp-Fastify
 
 - Muestra el clima de la ciudad actual, junto con el pronóstico de los próximos 5 días.
-- Permite también seleccionar entre otras 5 ciudades de las cuales mostrar la misma información.
+- Permite también seleccionar entre otras 5 ciudades de las cuales mostrará la misma información.
 
 ---
 
@@ -12,10 +12,7 @@
   </a>
 </p>
 
-
----
-
-### 🚀 Sitio Web
+## 🚀 Sitio Web
 
 - Github pages:
   - https://jonatandb.github.io/weather-app-with-fastify/
