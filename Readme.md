@@ -6,7 +6,7 @@
 ---
 
 
-<p align="center">
+<p align="center" onclick="window.open('https://weatherapp-jdb.web.app', '_blank');">
   <a href="https://weatherapp-jdb.web.app" target="_blank">
     <img src="/frontend/WeatherApp_Screenshot_v5.gif" alt="WeatherApp-Fastify - Pronóstico del clima en tu ciudad por Jonatandb" />
   </a>
